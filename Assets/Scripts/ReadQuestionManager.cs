@@ -153,6 +153,7 @@ public class ReadQuestionManager : MonoBehaviour
         {
             List<string> tempList = lt.GetProblem();
             tempList.Add("0");
+            tempList.Add("0");
             ListOX.Add(tempList);
         }
         ListOX.Add(new List<string> { "end" });
@@ -163,6 +164,7 @@ public class ReadQuestionManager : MonoBehaviour
         foreach (ProblemSA lt in ProblemList.short_answer)
         {
             List<string> tempList = lt.GetProblem();
+            tempList.Add("0");
             tempList.Add("0");
             ListSA.Add(tempList);
         }
@@ -175,6 +177,7 @@ public class ReadQuestionManager : MonoBehaviour
         {
             List<string> tempList = lt.GetProblem();
             tempList.Add("0");
+            tempList.Add("0");
             ListSO.Add(tempList);
         }
         ListSO.Add(new List<string> { "end" });
@@ -185,6 +188,7 @@ public class ReadQuestionManager : MonoBehaviour
         foreach (ProblemSM lt in ProblemList.select_multiple)
         {
             List<string> tempList = lt.GetProblem();
+            tempList.Add("0");
             tempList.Add("0");
             ListSM.Add(tempList);
         }

@@ -14,7 +14,7 @@ public class MainContent : MonoBehaviour
         Vector2 currentPosition = rectTransform.anchoredPosition;
         rectTransform.anchoredPosition = new Vector2(x1, currentPosition.y);
 
-        rectTransform.DOLocalMoveX(x2, time).SetEase(Ease.Linear);
+        rectTransform.DOLocalMoveX(x2, time).SetEase(Ease.InOutQuad);
         Debug.Log(x1 + "->" + x2);
 
     }

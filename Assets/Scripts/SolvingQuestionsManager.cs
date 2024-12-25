@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
 public class SolvingQuestionsManager : MonoBehaviour
@@ -41,6 +40,7 @@ public class SolvingQuestionsManager : MonoBehaviour
         {
             questionNum = i;
             SetQuestion(); //문제 설정
+            TopBar.GetComponent<TopBar>().SetProgress((float)(questionNum+1) / (float)Questions.Count*100);
             MainContent.GetComponent<MainContent>().MoveMainContent(2000, 0, 0.5f);
 
             //정답 입력 할때까지 기다림
@@ -206,6 +206,7 @@ public class SolvingQuestionsManager : MonoBehaviour
 
     void ProcessIncorrectAnswer()  //오답
     {
+
         comboCount = 0;
         lifeCount -= 1;
         TopBar.GetComponent<TopBar>().SetHeartCount(lifeCount);
