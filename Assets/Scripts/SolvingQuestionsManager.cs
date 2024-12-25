@@ -81,7 +81,7 @@ public class SolvingQuestionsManager : MonoBehaviour
     void SetQuestion()
     {
 
-        switch ("OX") //  Questions[questionNum][0]
+        switch ("SA") //  Questions[questionNum][0]
         {
             case "OX":
                 // "OX"일 때 실행할 코드
@@ -93,7 +93,9 @@ public class SolvingQuestionsManager : MonoBehaviour
             case "SA":
                 // "SA"일 때 실행할 코드
                 Debug.Log("SA 타입 질문 처리");
-                // SA 처리 로직 추가
+                
+                SAQuiz.SetActive(true);
+                SAQuiz.GetComponent<SAQuizSet>().SetQuestion(Questions[questionNum][4], "1,2");
                 break;
 
             case "SO":
@@ -124,7 +126,7 @@ public class SolvingQuestionsManager : MonoBehaviour
         string showTxt = "";
         string correctAnswer = "";
 
-        switch ("OX") //  Questions[questionNum][0]
+        switch ("SA") //  Questions[questionNum][0]
         {
             case "OX":
                 // "OX"일 때 실행할 코드
@@ -143,9 +145,20 @@ public class SolvingQuestionsManager : MonoBehaviour
                 break;
 
             case "SA":
-                // "SA"일 때 실행할 코드
+                // "SA"일 때 실행할 코드 correctAnswer = GameManager.instance.Normalization(Questions[questionNum][5]);
+                correctAnswer = GameManager.instance.Normalization(Questions[questionNum][5]);
+                Debug.Log(correctAnswer);
+                if (answer == correctAnswer)
+                {
+                    showTxt = "정답입니다!";
+                    ProcessCorrectAnswer();
+                }
+                else
+                {
+                    showTxt = "오답입니다!\n 정답은 " + correctAnswer + " 입니다.";
+                    ProcessIncorrectAnswer();
+                }
                 Debug.Log("SA 타입 질문 처리");
-                // SA 처리 로직 추가
                 break;
 
             case "SO":
@@ -237,7 +250,7 @@ public class SolvingQuestionsManager : MonoBehaviour
 
     void QuizComplete()
     {
-        switch ("OX") //  Questions[questionNum][0]
+        switch ("SA") //  Questions[questionNum][0]
         {
             case "OX":
                 OXQuiz.SetActive(false);
