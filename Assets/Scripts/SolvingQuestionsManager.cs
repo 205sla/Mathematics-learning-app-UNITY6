@@ -40,7 +40,7 @@ public class SolvingQuestionsManager : MonoBehaviour
         {
             questionNum = i;
             SetQuestion(); //문제 설정
-            TopBar.GetComponent<TopBar>().SetProgress((float)(questionNum+1) / (float)Questions.Count*100);
+            TopBar.GetComponent<TopBar>().SetProgress((float)(questionNum + 1) / (float)Questions.Count * 100);
             MainContent.GetComponent<MainContent>().MoveMainContent(2000, 0, 0.5f);
 
             //정답 입력 할때까지 기다림
@@ -81,7 +81,7 @@ public class SolvingQuestionsManager : MonoBehaviour
     void SetQuestion()
     {
 
-        switch ("SA") //  Questions[questionNum][0]
+        switch (Questions[questionNum][0]) //  Questions[questionNum][0]
         {
             case "OX":
                 // "OX"일 때 실행할 코드
@@ -93,7 +93,7 @@ public class SolvingQuestionsManager : MonoBehaviour
             case "SA":
                 // "SA"일 때 실행할 코드
                 Debug.Log("SA 타입 질문 처리");
-                
+
                 SAQuiz.SetActive(true);
                 SAQuiz.GetComponent<SAQuizSet>().SetQuestion(Questions[questionNum][4], "1,2");
                 break;
@@ -101,12 +101,17 @@ public class SolvingQuestionsManager : MonoBehaviour
             case "SO":
                 // "SO"일 때 실행할 코드
                 Debug.Log("SO 타입 질문 처리");
-                // SO 처리 로직 추가
+                SOQuiz.SetActive(true);
+                SOQuiz.GetComponent<SOQuizSet>().SetQuestion(Questions[questionNum][4]);
+                SOQuiz.GetComponent<SOQuizSet>().SetOption(new string[] { Questions[questionNum][5], Questions[questionNum][6], Questions[questionNum][7], Questions[questionNum][8], Questions[questionNum][9] });
+
                 break;
 
             case "SM":
                 // "SM"일 때 실행할 코드
-                Debug.Log("SM 타입 질문 처리");
+                SMQuiz.SetActive(true);
+                SMQuiz.GetComponent<SMQuizSet>().SetQuestion(Questions[questionNum][4]);
+                SMQuiz.GetComponent<SMQuizSet>().SetOption(new string[] { Questions[questionNum][6], Questions[questionNum][7], Questions[questionNum][8], Questions[questionNum][9], Questions[questionNum][10] });
                 // SM 처리 로직 추가
                 break;
 
@@ -126,7 +131,7 @@ public class SolvingQuestionsManager : MonoBehaviour
         string showTxt = "";
         string correctAnswer = "";
 
-        switch ("SA") //  Questions[questionNum][0]
+        switch (Questions[questionNum][0]) //  Questions[questionNum][0]
         {
             case "OX":
                 // "OX"일 때 실행할 코드
@@ -162,15 +167,34 @@ public class SolvingQuestionsManager : MonoBehaviour
                 break;
 
             case "SO":
-                // "SO"일 때 실행할 코드
+                correctAnswer = Questions[questionNum][5];
+                Debug.Log(correctAnswer);
+                if (answer == correctAnswer)
+                {
+                    showTxt = "정답입니다!";
+                    ProcessCorrectAnswer();
+                }
+                else
+                {
+                    showTxt = "오답입니다!\n 정답은 " + correctAnswer + " 입니다.";
+                    ProcessIncorrectAnswer();
+                }
                 Debug.Log("SO 타입 질문 처리");
-                // SO 처리 로직 추가
                 break;
 
             case "SM":
-                // "SM"일 때 실행할 코드
+                correctAnswer = GameManager.instance.Normalization(Questions[questionNum][5]); Debug.Log(correctAnswer);
+                if (answer == correctAnswer)
+                {
+                    showTxt = "정답입니다!";
+                    ProcessCorrectAnswer();
+                }
+                else
+                {
+                    showTxt = "오답입니다!\n 정답은 " + correctAnswer + " 입니다.";
+                    ProcessIncorrectAnswer();
+                }
                 Debug.Log("SM 타입 질문 처리");
-                // SM 처리 로직 추가
                 break;
 
             default:
@@ -184,9 +208,17 @@ public class SolvingQuestionsManager : MonoBehaviour
 
 
 
-    public void InputAnswer(string ans)
+    public void InputAnswer(string ans, bool Normalization=true )
     {
-        answer = GameManager.instance.Normalization(ans);
+        if (Normalization)
+        {
+            answer = GameManager.instance.Normalization(ans);
+        }
+        else
+        {
+            answer = ans;
+        }
+        
         Debug.Log($"답변 고마워: {answer}");
     }
 
@@ -250,7 +282,7 @@ public class SolvingQuestionsManager : MonoBehaviour
 
     void QuizComplete()
     {
-        switch ("SA") //  Questions[questionNum][0]
+        switch (Questions[questionNum][0]) //  Questions[questionNum][0]
         {
             case "OX":
                 OXQuiz.SetActive(false);
@@ -262,7 +294,6 @@ public class SolvingQuestionsManager : MonoBehaviour
 
             case "SO":
                 SOQuiz.SetActive(false);
-
                 break;
 
             case "SM":
@@ -278,85 +309,3 @@ public class SolvingQuestionsManager : MonoBehaviour
     }
 
 }
-
-
-/*///////////////////////////////////////////////////////////////////////////////////////////////
- 힌트
-using System.Collections;
-using UnityEngine;
-using UnityEngine.UI;
-
-public class OXQuizManager : MonoBehaviour
-{
-    public Text questionText;  // 문제를 보여줄 텍스트 UI
-    public Text resultText;    // 결과를 보여줄 텍스트 UI
-    public Button buttonO;     // O 버튼
-    public Button buttonX;     // X 버튼
-
-    private int currentQuestionIndex = 0;
-    private int score = 0;
-
-    // 문제 데이터 (문제, 정답)
-    private string[] questions = {
-        "각뿔대는 각뿔을 밑면에 평행한 평면으로 잘라서 생기는 두 다면체 중 각뿔을 제외한 나머지이다.",
-        "2는 홀수이다.",
-        "지구는 태양을 중심으로 공전한다.",
-        "물은 무색, 무취, 무미이다.",
-        "파리는 미국의 수도이다."
-    };
-
-    private bool[] answers = { false, false, true, true, false }; // 각각의 문제의 정답 (O: true, X: false)
-
-    void Start()
-    {
-        buttonO.onClick.AddListener(() => Answer(true));
-        buttonX.onClick.AddListener(() => Answer(false));
-
-        StartCoroutine(QuizCoroutine());
-    }
-
-    // 코루틴으로 문제를 하나씩 풀어가는 방식
-    IEnumerator QuizCoroutine()
-    {
-        for (int i = 0; i < questions.Length; i++)
-        {
-            questionText.text = questions[i];
-            resultText.text = "";  // 이전 문제 결과 초기화
-
-            // 사용자의 입력을 기다림
-            yield return new WaitUntil(() => resultText.text != "");
-
-            // 문제 종료 후 잠시 기다림
-            yield return new WaitForSeconds(1f);
-        }
-
-        // 퀴즈 종료 후 최종 점수 표시
-        questionText.text = "퀴즈 완료!";
-        resultText.text = "점수: " + score + "/" + questions.Length;
-    }
-
-    // 정답을 처리하는 함수
-    void Answer(bool userAnswer)
-    {
-        if (userAnswer == answers[currentQuestionIndex])
-        {
-            score++;
-            resultText.text = "맞았습니다!";
-        }
-        else
-        {
-            resultText.text = "틀렸습니다.";
-        }
-
-        // 문제 인덱스 증가
-        currentQuestionIndex++;
-
-        // 다음 문제로 넘어갈 수 있도록
-        if (currentQuestionIndex < questions.Length)
-        {
-            questionText.text = questions[currentQuestionIndex];
-        }
-    }
-}
-
-*/
