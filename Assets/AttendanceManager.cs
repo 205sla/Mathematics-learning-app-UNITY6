@@ -79,9 +79,15 @@ public class AttendanceManager : MonoBehaviour
 
     void CheckAttendance()
     {
+        
+    }
+
+    // 연속 출석일을 반환하는 메서드
+    public string GetConsecutiveDays()
+    {
         // 현재 날짜를 가져옵니다.
         string currentDate = DateTime.Now.Date.ToString("yyyy-MM-dd");  // 날짜만 비교
-        
+
 
         Debug.Log("지금 날짜: " + currentDate);
 
@@ -116,14 +122,12 @@ public class AttendanceManager : MonoBehaviour
             if (!DateTime.TryParse(lastAttendanceDate, out lastDate))
             {
                 Debug.LogError("잘못된 날짜 형식입니다.");
-                return;
             }
 
             DateTime current;
             if (!DateTime.TryParse(currentDate, out current))
             {
                 Debug.LogError("잘못된 날짜 형식입니다.");
-                return;
             }
 
 
@@ -148,19 +152,15 @@ public class AttendanceManager : MonoBehaviour
                 Debug.Log("이미 오늘 출석했습니다.");
                 todayCount += 1;
                 ES3.Save(todayCountKey, todayCount);
-                return; // 이미 오늘 출석한 경우 추가 로직을 실행하지 않음
+
             }
         }
 
         // 현재 날짜를 저장하여, 다음 출석 시 비교할 수 있게 합니다.
         ES3.Save(lastAttendanceDateKey, currentDate);  // ES3로 저장
         ES3.Save(consecutiveDaysKey, consecutiveDays);  // 연속 출석일 수 저장
-    }
 
-    // 연속 출석일을 반환하는 메서드
-    public string GetConsecutiveDays()
-    {
-        CheckAttendance();
+
         string tmepS = "";
         Debug.Log("연속 출석일" + consecutiveDays);
         // 연속 학습일에 맞는 메시지를 리스트에서 가져오기
@@ -178,6 +178,7 @@ public class AttendanceManager : MonoBehaviour
         else
         {
             int messageIndex = todayCount - 2;  // 2번째 출석부터 멘트 시작
+            Debug.Log("오늘 출석 횟수" + todayCount);
             if (messageIndex >= 0 && messageIndex < multipleAttendanceMessages.Count)
             {
                 tmepS = multipleAttendanceMessages[messageIndex];

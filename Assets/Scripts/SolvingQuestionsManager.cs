@@ -143,10 +143,9 @@ public class SolvingQuestionsManager : MonoBehaviour
     void EndProblemCourse()
     {
         Dictionary<string, string> ProblemCourseResults = new Dictionary<string, string>();
-        ProblemCourseResults.Add("time", (Time.time - startTime).ToString());
-        maxCombo = maxCombo > comboCount ? maxCombo : comboCount;
+        ProblemCourseResults.Add("time", ((int)(Time.time - startTime)).ToString());
         ProblemCourseResults.Add("comment", ComplimentGenerator.GetAccuracyMessage(Questions.Count, incorrectQuestionCount));
-        ProblemCourseResults.Add("percentage", ((float)incorrectQuestionCount / Questions.Count * 100).ToString());
+        ProblemCourseResults.Add("percentage", ((int)((float)(Questions.Count-incorrectQuestionCount) / (float)Questions.Count * 100f)).ToString());
         ProblemCourseResults.Add("maxCombo", maxCombo.ToString());
 
 
@@ -173,8 +172,7 @@ public class SolvingQuestionsManager : MonoBehaviour
 
     void SetCombo()
     {
-        maxCombo = maxCombo > comboCount ? maxCombo : comboCount;
-        Debug.Log("ÄÞº¸ Á¢±Ù2");
+        Debug.Log("ÄÞº¸ Á¢±Ù´Â: "+ comboCount);
         Combo.SetActive(true);
         Combo.GetComponent<Combo>().SetCombo(comboCount.ToString(), ComplimentGenerator.GetRandomCombo(comboCount));
     }
@@ -339,7 +337,10 @@ public class SolvingQuestionsManager : MonoBehaviour
     void ProcessCorrectAnswer() //Á¤´ä
     {
         //Á¡¼ö
+
         comboCount += 1;
+        maxCombo = maxCombo > comboCount ? maxCombo : comboCount;
+
         Debug.Log("ÄÞº¸: " + comboCount.ToString());
 
         //Ç¬ È½¼ö¿¡ 1 ´õÇÏ±â
@@ -358,7 +359,7 @@ public class SolvingQuestionsManager : MonoBehaviour
 
     void ProcessIncorrectAnswer()  //¿À´ä
     {
-
+        incorrectQuestionCount += 1;
         comboCount = 0;
         lifeCount -= 1;
         TopBar.GetComponent<TopBar>().SetHeartCount(lifeCount);
