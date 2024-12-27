@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Text.RegularExpressions;
+using Debug = UnityEngine.Debug;
 
 public class SolvingQuestionsManager : MonoBehaviour
 {
@@ -22,7 +24,7 @@ public class SolvingQuestionsManager : MonoBehaviour
     string showTxt = "";
     string correctAnswer = "";
     bool firstWrong = true;
-    float startTime=0;
+    float startTime = 0;
     private void Awake()
     {
         firstWrong = true;
@@ -50,6 +52,7 @@ public class SolvingQuestionsManager : MonoBehaviour
         while (true)
         {
             questionNum += 1;
+            
             SetQuestion(); //¹®Á¦ ¼³Á¤
             TopBar.GetComponent<TopBar>().SetProgress((float)(questionNum + 1) / (float)Questions.Count * 100);
             MainContent.GetComponent<MainContent>().MoveMainContent(2000, 0, 0.5f);
@@ -143,7 +146,7 @@ public class SolvingQuestionsManager : MonoBehaviour
         ProblemCourseResults.Add("time", (Time.time - startTime).ToString());
         maxCombo = maxCombo > comboCount ? maxCombo : comboCount;
         ProblemCourseResults.Add("comment", ComplimentGenerator.GetAccuracyMessage(Questions.Count, incorrectQuestionCount));
-        ProblemCourseResults.Add("percentage", ((float)incorrectQuestionCount/ Questions.Count*100).ToString());
+        ProblemCourseResults.Add("percentage", ((float)incorrectQuestionCount / Questions.Count * 100).ToString());
         ProblemCourseResults.Add("maxCombo", maxCombo.ToString());
 
 
@@ -178,12 +181,12 @@ public class SolvingQuestionsManager : MonoBehaviour
 
     void SetQuestion()
     {
-        PrintList(Questions[questionNum]);
+        Debug.Log("ÁøÂ¥ ¹Ì¸® Á¤´ä ³»°¡ ¾Ë·ÁÁØ´Ù." + Questions[questionNum][5]);
         switch (Questions[questionNum][0]) //  Questions[questionNum][0]
         {
             case "OX":
                 // "OX"ÀÏ ¶§ ½ÇÇàÇÒ ÄÚµå
-                Debug.Log("OX Å¸ÀÔ Áú¹® Ã³¸®");
+                Debug.Log("OX Å¸ÀÔ Áú¹® Ã³¸®: ");
                 OXQuiz.SetActive(true);
                 OXQuiz.GetComponent<OXQuiSet>().SetQuestion(Questions[questionNum][4]);
                 break;
@@ -226,13 +229,15 @@ public class SolvingQuestionsManager : MonoBehaviour
 
     void SetResult()
     {
+        Debug.Log("¸¶½ºÅÍ" + Questions[questionNum][0]);
+
 
         switch (Questions[questionNum][0]) //  Questions[questionNum][0]
         {
+
             case "OX":
                 // "OX"ÀÏ ¶§ ½ÇÇàÇÒ ÄÚµå
                 correctAnswer = GameManager.instance.Normalization(Questions[questionNum][5]);
-                Debug.Log("Á¤´ä ½ºÆ÷: " + correctAnswer);
                 if (answer == correctAnswer)
                 {
                     showTxt = "Á¤´äÀÔ´Ï´Ù!";
@@ -244,20 +249,32 @@ public class SolvingQuestionsManager : MonoBehaviour
                     ProcessIncorrectAnswer();
                 }
                 Debug.Log("OX Å¸ÀÔ Áú¹® Ã³¸®");
-                ResultBoard.GetComponent<ResultBoard>().SetCorrectAnswer(showTxt);
+                
                 break;
 
             case "SA":
                 // "SA"ÀÏ ¶§ ½ÇÇàÇÒ ÄÚµå correctAnswer = GameManager.instance.Normalization(Questions[questionNum][5]);
 
-                StartCoroutine("HandleSAQuizUpdateAnsAndProcessResult");
-                Debug.Log("SA Å¸ÀÔ Áú¹® Ã³¸®");
+                Debug.Log("³ÊÀÇÀÌ¸§Àº");
+                correctAnswer = GameManager.instance.Normalization(Questions[questionNum][5]);
+                Debug.Log("Á¤´ä ½ºÆ÷´Â: " + correctAnswer);
+                Debug.Log("ÀÔ·ÂµÈ ½ºÆ÷´Â: " + answer);
+                if (IsAnswerCorrect(correctAnswer, answer))
+                {
+                    showTxt = "Á¤´äÀÔ´Ï´Ù!";
+                    ProcessCorrectAnswer();
+                }
+                else
+                {
+                    showTxt = "¿À´äÀÔ´Ï´Ù!\n Á¤´äÀº " + Questions[questionNum][5] + " ÀÔ´Ï´Ù.";
+                    ProcessIncorrectAnswer();
+                }
                 break;
 
             case "SO":
                 correctAnswer = Questions[questionNum][5];
                 Debug.Log("Á¤´ä ½ºÆ÷: " + correctAnswer);
-                Debug.Log(correctAnswer);
+                Debug.Log("´äº¯ ½ºÆ÷: " + answer);
                 if (answer == correctAnswer)
                 {
                     showTxt = "Á¤´äÀÔ´Ï´Ù!";
@@ -269,7 +286,6 @@ public class SolvingQuestionsManager : MonoBehaviour
                     ProcessIncorrectAnswer();
                 }
                 Debug.Log("SO Å¸ÀÔ Áú¹® Ã³¸®");
-                ResultBoard.GetComponent<ResultBoard>().SetCorrectAnswer(showTxt);
                 break;
 
             case "SM":
@@ -286,7 +302,6 @@ public class SolvingQuestionsManager : MonoBehaviour
                     ProcessIncorrectAnswer();
                 }
                 Debug.Log("SM Å¸ÀÔ Áú¹® Ã³¸®");
-                ResultBoard.GetComponent<ResultBoard>().SetCorrectAnswer(showTxt);
                 break;
 
             default:
@@ -295,29 +310,9 @@ public class SolvingQuestionsManager : MonoBehaviour
                 GameManager.instance.LoadScene();
                 break;
         }
-
-    }
-
-    IEnumerable HandleSAQuizUpdateAnsAndProcessResult()
-    {
-        correctAnswer = GameManager.instance.Normalization(Questions[questionNum][5]);
-        SAQuiz.GetComponent<SAQuizSet>().UpdateAns();
-        yield return new WaitForSeconds(0.2f);
-        Debug.Log("Á¤´ä ½ºÆ÷´Â: " + correctAnswer);
-        Debug.Log("ÀÔ·ÂµÈ ½ºÆ÷´Â: " + answer);
-        Debug.Log(correctAnswer);
-        if (answer == correctAnswer)
-        {
-            showTxt = "Á¤´äÀÔ´Ï´Ù!";
-            ProcessCorrectAnswer();
-        }
-        else
-        {
-            showTxt = "¿À´äÀÔ´Ï´Ù!\n Á¤´äÀº " + Questions[questionNum][5] + " ÀÔ´Ï´Ù.";
-            ProcessIncorrectAnswer();
-        }
         ResultBoard.GetComponent<ResultBoard>().SetCorrectAnswer(showTxt);
     }
+
 
 
 
@@ -331,9 +326,8 @@ public class SolvingQuestionsManager : MonoBehaviour
         {
             answer = ans;
         }
-
-        Debug.Log($"´äº¯ °í¸¶¿ö: {answer}");
     }
+
 
 
     public void ResultButton()
@@ -430,4 +424,36 @@ public class SolvingQuestionsManager : MonoBehaviour
         }
     }
 
+    // Á¤´ä°ú ´äº¯À» ºñ±³ÇÏ´Â ÇÔ¼ö
+    bool IsAnswerCorrect(string answer, string correctAnswer) 
+    {
+        // 1. ´äº¯°ú Á¤´ä¿¡¼­ ÇÑ±Û, ¾ËÆÄºª, ¼ýÀÚ, -¸¸ ³²±â±â
+        string processedAnswer = CleanString(answer);
+        string processedCorrectAnswer = CleanString(correctAnswer);
+
+        // 2. ´ë¼Ò¹®ÀÚ ±¸ºÐ ¾øÀ½ (¼Ò¹®ÀÚ·Î º¯È¯)
+        processedAnswer = processedAnswer.ToLower();
+        processedCorrectAnswer = processedCorrectAnswer.ToLower();
+
+        // 3. ´äº¯ÀÇ ³¡ÀÌ ÇÑ±ÛÀÌ¸é ¸¶Áö¸· ±ÛÀÚ Á¦°Å ÈÄ ºñ±³
+        if (IsLastCharacterKorean(processedAnswer))
+        {
+            processedAnswer = processedAnswer.Substring(0, processedAnswer.Length - 1);
+        }
+
+        // ºñ±³ ÈÄ °á°ú ¹ÝÈ¯
+        return processedAnswer == processedCorrectAnswer;
+    }
+
+    // ÇÑ±Û, ¾ËÆÄºª, ¼ýÀÚ, -¸¸ ³²±â´Â ÇÔ¼ö
+    private static string CleanString(string input)
+    {
+        return Regex.Replace(input, "[^°¡-ÆRa-zA-Z0-9-]", "");
+    }
+
+    // ¹®ÀÚ¿­ ¸¶Áö¸· ¹®ÀÚ°¡ ÇÑ±ÛÀÎÁö È®ÀÎÇÏ´Â ÇÔ¼ö
+    private static bool IsLastCharacterKorean(string input)
+    {
+        return input.Length > 0 && Regex.IsMatch(input[input.Length - 1].ToString(), @"[\uac00-\ud7af]");
+    }
 }

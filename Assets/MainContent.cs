@@ -15,7 +15,7 @@ public class MainContent : MonoBehaviour
         rectTransform.anchoredPosition = new Vector2(x1, currentPosition.y);
 
         rectTransform.DOLocalMoveX(x2, time).SetEase(Ease.InOutQuad);
-        Debug.Log(x1 + "->" + x2);
+        //Debug.Log(x1 + "->" + x2);
 
     }
 }
