@@ -10,7 +10,7 @@ public class SolvingQuestionsManager : MonoBehaviour
     public string answer = "";
     public bool IsInputAnswer = false;
 
-    public int comboCount = 0, lifeCount = 5;
+    public int comboCount = 0, lifeCount = 5, incorrectQuestionCount = 0, maxCombo = 0;
 
     [SerializeField]
     GameObject TopBar, MainContent, ResultBoard, OXQuiz, SAQuiz, SOQuiz, SMQuiz, Combo;
@@ -21,8 +21,11 @@ public class SolvingQuestionsManager : MonoBehaviour
 
     string showTxt = "";
     string correctAnswer = "";
+    bool firstWrong = true;
+    float startTime=0;
     private void Awake()
     {
+        firstWrong = true;
         questionNum = 0;
         if (ES3.KeyExists("courseData"))
         {
@@ -37,6 +40,7 @@ public class SolvingQuestionsManager : MonoBehaviour
 
     private void Start()
     {
+        startTime = Time.time;
         StartCoroutine(CourseProgress());
     }
 
@@ -85,14 +89,20 @@ public class SolvingQuestionsManager : MonoBehaviour
             {
                 if (missedQuestions.Count != 0)
                 {
-                    foreach (var q in missedQuestions) {
+                    if (firstWrong)
+                    {
+                        SaveWrongProblem();
+                    }
+
+                    foreach (var q in missedQuestions)
+                    {
                         Questions.Add(q);
                     }
                     missedQuestions.Clear();
                 }
                 else
                 {
-                    Debug.Log("³¡³µ´Ù¿¡¿ä~~~~~~~~~~~~~~~~~~~~~");
+                    EndProblemCourse();
                     yield return new WaitUntil(() => false);
                 }
             }
@@ -124,15 +134,43 @@ public class SolvingQuestionsManager : MonoBehaviour
 
 
                 }
-
-
             }
-
         }
+    }
+    void EndProblemCourse()
+    {
+        Dictionary<string, string> ProblemCourseResults = new Dictionary<string, string>();
+        ProblemCourseResults.Add("time", (Time.time - startTime).ToString());
+        maxCombo = maxCombo > comboCount ? maxCombo : comboCount;
+        ProblemCourseResults.Add("comment", ComplimentGenerator.GetAccuracyMessage(Questions.Count, incorrectQuestionCount));
+        ProblemCourseResults.Add("percentage", ((float)incorrectQuestionCount/ Questions.Count*100).ToString());
+        ProblemCourseResults.Add("maxCombo", maxCombo.ToString());
+
+
+        //GetRandomCombo(comboCount)
+        ES3.Save("ProblemCourseResults", ProblemCourseResults);
+        GameManager.instance.LoadScene("Result");
+    }
+
+
+    void SaveWrongProblem()
+    {//missedQuestions
+        List<List<string>> tempLis = new List<List<string>>();
+        if (ES3.KeyExists("WrongProblemData"))
+        {
+            tempLis = ES3.Load<List<List<string>>>("WrongProblemData");
+        }
+        foreach (var l in missedQuestions)
+        {
+            tempLis.Add(l);
+        }
+
+        ES3.Save("WrongProblemData", tempLis);
     }
 
     void SetCombo()
     {
+        maxCombo = maxCombo > comboCount ? maxCombo : comboCount;
         Debug.Log("ÄÞº¸ Á¢±Ù2");
         Combo.SetActive(true);
         Combo.GetComponent<Combo>().SetCombo(comboCount.ToString(), ComplimentGenerator.GetRandomCombo(comboCount));
@@ -257,7 +295,7 @@ public class SolvingQuestionsManager : MonoBehaviour
                 GameManager.instance.LoadScene();
                 break;
         }
-        
+
     }
 
     IEnumerable HandleSAQuizUpdateAnsAndProcessResult()

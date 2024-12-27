@@ -152,7 +152,7 @@ public class ComplimentGenerator : MonoBehaviour
         }
     }
 
-    public string GetRandomAccuracyMessage(int accuracyLevel)
+    string GetRandomAccuracyMessage(int accuracyLevel)
     {
         switch (accuracyLevel)
         {
@@ -171,5 +171,37 @@ public class ComplimentGenerator : MonoBehaviour
         }
     }
 
+    public  string GetAccuracyMessage(int totalQuestions, int incorrectQuestions)
+    {
+        // 정확도 계산
+        float accuracy = (totalQuestions - incorrectQuestions) / (float)totalQuestions * 100;
+
+        // 정확도 수준 계산
+        int accuracyLevel = 0;
+
+        if (accuracy == 100)
+        {
+            accuracyLevel = 5;  // 다 맞은 경우
+        }
+        else if (accuracy >= 80)
+        {
+            accuracyLevel = 4;  // 80% 이상 맞은 경우
+        }
+        else if (accuracy >= 60)
+        {
+            accuracyLevel = 3;  // 60% 이상 맞은 경우
+        }
+        else if (accuracy >= 40)
+        {
+            accuracyLevel = 2;  // 40% 이상 맞은 경우
+        }
+        else
+        {
+            accuracyLevel = 0;  // 다 틀린 경우
+        }
+
+        // 정확도 메시지 반환
+        return GetRandomAccuracyMessage(accuracyLevel);
+    }
 
 }

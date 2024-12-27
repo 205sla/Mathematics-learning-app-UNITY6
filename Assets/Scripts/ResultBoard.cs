@@ -1,8 +1,7 @@
-using UnityEngine;
 using DG.Tweening;
 using Michsky.MUIP;
 using TexDrawLib;
-using static UnityEngine.RuleTile.TilingRuleOutput;
+using UnityEngine;
 
 public class ResultBoard : MonoBehaviour
 {
@@ -22,10 +21,10 @@ public class ResultBoard : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
-    public void SetBtn(string txt,int y, float time)
+    public void SetBtn(string txt, int y, float time)
     {
         Debug.Log(txt);
         ResultButton.GetComponent<ButtonManager>().SetText(txt);
@@ -35,9 +34,11 @@ public class ResultBoard : MonoBehaviour
 
     public void SetCorrectAnswer(string txt)
     {
-        CorrectAnswer.GetComponent<TEXDraw>().text = txt;
+        if (CorrectAnswer != null)
+        {
+            CorrectAnswer.GetComponent<TEXDraw>().text = txt;
+        }
     }
-
 
 
 }

@@ -8,7 +8,7 @@ public class TopBar : MonoBehaviour
     [SerializeField]
     TMP_Text HeartCount;
     [SerializeField]
-    GameObject progressBar;
+    GameObject progressBar, Heart;
 
     float value = 0f;
 
@@ -20,7 +20,14 @@ public class TopBar : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public void SetHeartCount(int heartCount)
     {
-        HeartCount.text = heartCount.ToString();
+        if (heartCount > 0)
+        {
+            HeartCount.text = heartCount.ToString();
+        }
+        else
+        {
+            Heart.SetActive(false);
+        }
     }
 
     public void SetProgress(float progress)

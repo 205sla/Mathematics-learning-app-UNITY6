@@ -15,7 +15,7 @@ public class Combo : MonoBehaviour
         ComboStr.text = AddNewLineAfterPunctuation(comboStr);
     }
 
-    static string AddNewLineAfterPunctuation(string input)
+    string AddNewLineAfterPunctuation(string input)
     {
         // !나 , 뒤에 \n을 추가
         string pattern = @"([!,])";  // ! 또는 ,를 찾아서

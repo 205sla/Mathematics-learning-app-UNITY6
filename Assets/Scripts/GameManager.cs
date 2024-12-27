@@ -56,6 +56,11 @@ public class GameManager : MonoBehaviour
             LoadScene("Title");
             return;
         }
+        if (SceneManager.GetActiveScene().name == "Result")
+        {
+            LoadScene("Title");
+            return;
+        }
         if (SceneManager.GetActiveScene().name == "MakingCourse")
         {
             LoadScene("SelectProblem");
@@ -78,8 +83,15 @@ public class GameManager : MonoBehaviour
         // 두 번째 뒤로가기 버튼 눌렀을 때 프로그램 종료
         if (pressCount == 2)
         {
-            Quit(); // 프로그램 종료
-            Debug.Log("Application is exiting..."); // 로그로 종료 메시지
+            if (SceneManager.GetActiveScene().name == "SolvingQuestions")
+            {
+                LoadScene("SelectProblem");
+                return;
+            }
+            else
+            {
+                Quit();
+            }
         }
 
     }

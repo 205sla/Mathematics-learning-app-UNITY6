@@ -29,6 +29,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SolvingQuestions.unity
     guid: d17d7953f9af2f347b741f54dbeba3d8
+  - enabled: 1
+    path: Assets/Scenes/Result.unity
+    guid: 95ab9978151786f4889e001eb91f646a
   m_configObjects:
     com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000, guid: 9b548009b6c8bba4ba4ce3e0b36adcf9, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}

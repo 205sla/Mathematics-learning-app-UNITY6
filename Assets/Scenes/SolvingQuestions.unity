@@ -28238,6 +28238,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HeartCount: {fileID: 1001815981}
   progressBar: {fileID: 450591237}
+  Heart: {fileID: 32916835}
 --- !u!1 &1467294912
 GameObject:
   m_ObjectHideFlags: 0
