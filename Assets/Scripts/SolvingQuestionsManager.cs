@@ -17,6 +17,10 @@ public class SolvingQuestionsManager : MonoBehaviour
 
     [SerializeField]
     ComplimentGenerator ComplimentGenerator;
+
+
+    string showTxt = "";
+    string correctAnswer = "";
     private void Awake()
     {
         questionNum = 0;
@@ -38,10 +42,10 @@ public class SolvingQuestionsManager : MonoBehaviour
 
     IEnumerator CourseProgress()
     {
-
-        for (int i = 0; i < Questions.Count; i++)
+        questionNum = 0;
+        while (true)
         {
-            questionNum = i;
+            questionNum += 1;
             SetQuestion(); //문제 설정
             TopBar.GetComponent<TopBar>().SetProgress((float)(questionNum + 1) / (float)Questions.Count * 100);
             MainContent.GetComponent<MainContent>().MoveMainContent(2000, 0, 0.5f);
@@ -76,33 +80,53 @@ public class SolvingQuestionsManager : MonoBehaviour
             QuizComplete();
 
 
-            //콤보?
-            if (comboCount == 5 || comboCount == 10 || comboCount == 15)
+            //마지막 문제 였나요?
+            if (questionNum + 1 == Questions.Count)
             {
-                //콤보인데요 마지막 문제일 경우 예외 처리 해야해요..
-                Debug.Log("콤보 접근");
-                SetCombo();
-                MainContent.GetComponent<MainContent>().MoveMainContent(2000, 0, 0.5f);
-                yield return new WaitForSeconds(0.5f);
+                if (missedQuestions.Count != 0)
+                {
+                    foreach (var q in missedQuestions) {
+                        Questions.Add(q);
+                    }
+                    missedQuestions.Clear();
+                }
+                else
+                {
+                    Debug.Log("끝났다에요~~~~~~~~~~~~~~~~~~~~~");
+                    yield return new WaitUntil(() => false);
+                }
+            }
+            else
+            {
+
+                if (comboCount == 5 || comboCount == 10 || comboCount == 15)
+                {
+                    //콤보인데요
+                    Debug.Log("콤보 접근");
+                    SetCombo();
+                    MainContent.GetComponent<MainContent>().MoveMainContent(2000, 0, 0.5f);
+                    yield return new WaitForSeconds(0.5f);
 
 
-                ResultBoard.GetComponent<ResultBoard>().SetBtn("콤보", -100, 0.5f);
-                yield return new WaitForSeconds(0.5f);
+                    ResultBoard.GetComponent<ResultBoard>().SetBtn("콤보", -100, 0.5f);
+                    yield return new WaitForSeconds(0.5f);
 
-                IsInputAnswer = false;
-                yield return new WaitUntil(() => IsInputAnswer);
+                    IsInputAnswer = false;
+                    yield return new WaitUntil(() => IsInputAnswer);
 
-                ResultBoard.GetComponent<ResultBoard>().SetBtn("오예", -500, 0.5f);
-                yield return new WaitForSeconds(0.5f);
+                    ResultBoard.GetComponent<ResultBoard>().SetBtn("오예", -500, 0.5f);
+                    yield return new WaitForSeconds(0.5f);
 
-                MainContent.GetComponent<MainContent>().MoveMainContent(0, -2000, 0.5f);
-                yield return new WaitForSeconds(0.5f);
+                    MainContent.GetComponent<MainContent>().MoveMainContent(0, -2000, 0.5f);
+                    yield return new WaitForSeconds(0.5f);
 
-                Combo.SetActive(false);
+                    Combo.SetActive(false);
+
+
+                }
 
 
             }
-
 
         }
     }
@@ -164,8 +188,6 @@ public class SolvingQuestionsManager : MonoBehaviour
 
     void SetResult()
     {
-        string showTxt = "";
-        string correctAnswer = "";
 
         switch (Questions[questionNum][0]) //  Questions[questionNum][0]
         {
@@ -184,25 +206,13 @@ public class SolvingQuestionsManager : MonoBehaviour
                     ProcessIncorrectAnswer();
                 }
                 Debug.Log("OX 타입 질문 처리");
+                ResultBoard.GetComponent<ResultBoard>().SetCorrectAnswer(showTxt);
                 break;
 
             case "SA":
                 // "SA"일 때 실행할 코드 correctAnswer = GameManager.instance.Normalization(Questions[questionNum][5]);
-                correctAnswer = GameManager.instance.Normalization(Questions[questionNum][5]);
-                SAQuiz.GetComponent<SAQuizSet>().UpdateAns();
-                Debug.Log("정답 스포는: " + correctAnswer);
-                Debug.Log("입력된 스포는: " + answer);
-                Debug.Log(correctAnswer);
-                if (answer == correctAnswer)
-                {
-                    showTxt = "정답입니다!";
-                    ProcessCorrectAnswer();
-                }
-                else
-                {
-                    showTxt = "오답입니다!\n 정답은 " + correctAnswer + " 입니다.";
-                    ProcessIncorrectAnswer();
-                }
+
+                StartCoroutine("HandleSAQuizUpdateAnsAndProcessResult");
                 Debug.Log("SA 타입 질문 처리");
                 break;
 
@@ -221,6 +231,7 @@ public class SolvingQuestionsManager : MonoBehaviour
                     ProcessIncorrectAnswer();
                 }
                 Debug.Log("SO 타입 질문 처리");
+                ResultBoard.GetComponent<ResultBoard>().SetCorrectAnswer(showTxt);
                 break;
 
             case "SM":
@@ -237,6 +248,7 @@ public class SolvingQuestionsManager : MonoBehaviour
                     ProcessIncorrectAnswer();
                 }
                 Debug.Log("SM 타입 질문 처리");
+                ResultBoard.GetComponent<ResultBoard>().SetCorrectAnswer(showTxt);
                 break;
 
             default:
@@ -244,6 +256,27 @@ public class SolvingQuestionsManager : MonoBehaviour
                 Debug.LogWarning("알 수 없는 질문 타입: " + Questions[questionNum][0]);
                 GameManager.instance.LoadScene();
                 break;
+        }
+        
+    }
+
+    IEnumerable HandleSAQuizUpdateAnsAndProcessResult()
+    {
+        correctAnswer = GameManager.instance.Normalization(Questions[questionNum][5]);
+        SAQuiz.GetComponent<SAQuizSet>().UpdateAns();
+        yield return new WaitForSeconds(0.2f);
+        Debug.Log("정답 스포는: " + correctAnswer);
+        Debug.Log("입력된 스포는: " + answer);
+        Debug.Log(correctAnswer);
+        if (answer == correctAnswer)
+        {
+            showTxt = "정답입니다!";
+            ProcessCorrectAnswer();
+        }
+        else
+        {
+            showTxt = "오답입니다!\n 정답은 " + Questions[questionNum][5] + " 입니다.";
+            ProcessIncorrectAnswer();
         }
         ResultBoard.GetComponent<ResultBoard>().SetCorrectAnswer(showTxt);
     }

@@ -18046,6 +18046,7 @@ MonoBehaviour:
   QuestionTxt: {fileID: 1609267142}
   inputField: {fileID: 1800115637}
   placeholderText: {fileID: 1838056308}
+  ansK: {fileID: 1870219711}
 --- !u!1 &923696118
 GameObject:
   m_ObjectHideFlags: 0
@@ -32977,19 +32978,7 @@ MonoBehaviour:
       m_Calls: []
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 919432613}
-        m_TargetAssemblyTypeName: SAQuizSet, Assembly-CSharp
-        m_MethodName: InputAns
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   m_OnTouchScreenKeyboardStatusChanged:
     m_PersistentCalls:
       m_Calls: []

@@ -18,13 +18,13 @@ public class SMQuizSet : MonoBehaviour
         QuestionTxt.GetComponent<TEXDraw>().text = str;
         for (int i = 0; i < 5; i++)
         {
+            chosenAnswers[i] = false;
             Check[i].GetComponent<Check>().SetHighlightON(false);
         }
     }
 
     public void SetOption(string[] str)
     {
-        // 섞은 배열을 UI에 설정
         for (int i = 0; i < 5; i++)
         {
             OptionTEXDraw[i].GetComponent<TEXDraw>().text = str[i];

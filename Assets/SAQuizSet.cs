@@ -1,6 +1,9 @@
 using TexDrawLib;
 using TMPro;
 using UnityEngine;
+using System.Collections;
+using UnityEngine.UI;
+
 
 public class SAQuizSet : MonoBehaviour
 {
@@ -11,7 +14,9 @@ public class SAQuizSet : MonoBehaviour
     TMP_InputField inputField;
 
     [SerializeField]
-    TMP_Text placeholderText;
+    TMP_Text placeholderText, ansK;
+
+    string returnAnsTxt = "";
 
 
     public void SetQuestion(string str, string inpinputForm)
@@ -23,15 +28,25 @@ public class SAQuizSet : MonoBehaviour
 
     public void InputAns()
     {
-        Debug.Log("진짜 답변" + inputField.text);
+        Debug.Log("가짜 답변" + inputField.text);
         SolvingQuestionsManager.GetComponent<SolvingQuestionsManager>().InputAnswer(inputField.text);
     }
 
 
     public void UpdateAns()
     {
-        Debug.Log("진짜 답변" + inputField.text);
-        SolvingQuestionsManager.GetComponent<SolvingQuestionsManager>().InputAnswer(inputField.text);
-
+        returnAnsTxt = inputField.text;
+        inputField.text = "";
+        StartCoroutine(HandleSubmitAfterDelay());
     }
+
+    private IEnumerator HandleSubmitAfterDelay() {
+        yield return new WaitForSeconds(0.2f);  // 0.1초 정도 기다리면 충분할 수 있다.
+        returnAnsTxt += inputField.text;
+        inputField.text = "";
+        Debug.Log("진짜 답변" + returnAnsTxt);
+        SolvingQuestionsManager.GetComponent<SolvingQuestionsManager>().InputAnswer(inputField.text);
+    }
+
+
 }
