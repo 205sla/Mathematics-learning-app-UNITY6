@@ -13,7 +13,10 @@ public class SolvingQuestionsManager : MonoBehaviour
     public int comboCount = 0, lifeCount = 5;
 
     [SerializeField]
-    GameObject TopBar, MainContent, ResultBoard, OXQuiz, SAQuiz, SOQuiz, SMQuiz;
+    GameObject TopBar, MainContent, ResultBoard, OXQuiz, SAQuiz, SOQuiz, SMQuiz, Combo;
+
+    [SerializeField]
+    ComplimentGenerator ComplimentGenerator;
     private void Awake()
     {
         questionNum = 0;
@@ -64,23 +67,56 @@ public class SolvingQuestionsManager : MonoBehaviour
 
 
             //결과버튼 숨기며 
-            ResultBoard.GetComponent<ResultBoard>().SetBtn("오예!", -500, 0.5f);
+            ResultBoard.GetComponent<ResultBoard>().SetBtn("오예", -500, 0.5f);
 
             //다음으로
             MainContent.GetComponent<MainContent>().MoveMainContent(0, -2000, 0.5f);
             yield return new WaitForSeconds(0.5f);
-            //콤보?
-
 
             QuizComplete();
+
+
+            //콤보?
+            if (comboCount == 5 || comboCount == 10 || comboCount == 15)
+            {
+                //콤보인데요 마지막 문제일 경우 예외 처리 해야해요..
+                Debug.Log("콤보 접근");
+                SetCombo();
+                MainContent.GetComponent<MainContent>().MoveMainContent(2000, 0, 0.5f);
+                yield return new WaitForSeconds(0.5f);
+
+
+                ResultBoard.GetComponent<ResultBoard>().SetBtn("콤보", -100, 0.5f);
+                yield return new WaitForSeconds(0.5f);
+
+                IsInputAnswer = false;
+                yield return new WaitUntil(() => IsInputAnswer);
+
+                ResultBoard.GetComponent<ResultBoard>().SetBtn("오예", -500, 0.5f);
+                yield return new WaitForSeconds(0.5f);
+
+                MainContent.GetComponent<MainContent>().MoveMainContent(0, -2000, 0.5f);
+                yield return new WaitForSeconds(0.5f);
+
+                Combo.SetActive(false);
+
+
+            }
+
+
         }
+    }
 
-
+    void SetCombo()
+    {
+        Debug.Log("콤보 접근2");
+        Combo.SetActive(true);
+        Combo.GetComponent<Combo>().SetCombo(comboCount.ToString(), ComplimentGenerator.GetRandomCombo(comboCount));
     }
 
     void SetQuestion()
     {
-
+        PrintList(Questions[questionNum]);
         switch (Questions[questionNum][0]) //  Questions[questionNum][0]
         {
             case "OX":
@@ -95,7 +131,7 @@ public class SolvingQuestionsManager : MonoBehaviour
                 Debug.Log("SA 타입 질문 처리");
 
                 SAQuiz.SetActive(true);
-                SAQuiz.GetComponent<SAQuizSet>().SetQuestion(Questions[questionNum][4], "1,2");
+                SAQuiz.GetComponent<SAQuizSet>().SetQuestion(Questions[questionNum][4], Questions[questionNum][6]);
                 break;
 
             case "SO":
@@ -136,6 +172,7 @@ public class SolvingQuestionsManager : MonoBehaviour
             case "OX":
                 // "OX"일 때 실행할 코드
                 correctAnswer = GameManager.instance.Normalization(Questions[questionNum][5]);
+                Debug.Log("정답 스포: " + correctAnswer);
                 if (answer == correctAnswer)
                 {
                     showTxt = "정답입니다!";
@@ -152,6 +189,9 @@ public class SolvingQuestionsManager : MonoBehaviour
             case "SA":
                 // "SA"일 때 실행할 코드 correctAnswer = GameManager.instance.Normalization(Questions[questionNum][5]);
                 correctAnswer = GameManager.instance.Normalization(Questions[questionNum][5]);
+                SAQuiz.GetComponent<SAQuizSet>().UpdateAns();
+                Debug.Log("정답 스포는: " + correctAnswer);
+                Debug.Log("입력된 스포는: " + answer);
                 Debug.Log(correctAnswer);
                 if (answer == correctAnswer)
                 {
@@ -168,6 +208,7 @@ public class SolvingQuestionsManager : MonoBehaviour
 
             case "SO":
                 correctAnswer = Questions[questionNum][5];
+                Debug.Log("정답 스포: " + correctAnswer);
                 Debug.Log(correctAnswer);
                 if (answer == correctAnswer)
                 {
@@ -184,6 +225,7 @@ public class SolvingQuestionsManager : MonoBehaviour
 
             case "SM":
                 correctAnswer = GameManager.instance.Normalization(Questions[questionNum][5]); Debug.Log(correctAnswer);
+                Debug.Log("정답 스포: " + correctAnswer);
                 if (answer == correctAnswer)
                 {
                     showTxt = "정답입니다!";
@@ -208,7 +250,7 @@ public class SolvingQuestionsManager : MonoBehaviour
 
 
 
-    public void InputAnswer(string ans, bool Normalization=true )
+    public void InputAnswer(string ans, bool Normalization = true)
     {
         if (Normalization)
         {
@@ -218,7 +260,7 @@ public class SolvingQuestionsManager : MonoBehaviour
         {
             answer = ans;
         }
-        
+
         Debug.Log($"답변 고마워: {answer}");
     }
 
@@ -305,6 +347,15 @@ public class SolvingQuestionsManager : MonoBehaviour
                 Debug.LogWarning("알 수 없는 질문 타입: " + Questions[questionNum][0]);
                 GameManager.instance.LoadScene();
                 break;
+        }
+    }
+
+    void PrintList(List<string> list)
+    {
+        Debug.Log("문제 출력 해줘잉!");
+        foreach (string item in list)
+        {
+            Debug.Log(item);
         }
     }
 

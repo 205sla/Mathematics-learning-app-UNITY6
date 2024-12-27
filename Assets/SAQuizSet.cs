@@ -1,7 +1,6 @@
-using UnityEngine;
 using TexDrawLib;
-using UnityEngine.UI;
 using TMPro;
+using UnityEngine;
 
 public class SAQuizSet : MonoBehaviour
 {
@@ -24,7 +23,15 @@ public class SAQuizSet : MonoBehaviour
 
     public void InputAns()
     {
-        Debug.Log("진짜 답변"+inputField.text);
+        Debug.Log("진짜 답변" + inputField.text);
         SolvingQuestionsManager.GetComponent<SolvingQuestionsManager>().InputAnswer(inputField.text);
+    }
+
+
+    public void UpdateAns()
+    {
+        Debug.Log("진짜 답변" + inputField.text);
+        SolvingQuestionsManager.GetComponent<SolvingQuestionsManager>().InputAnswer(inputField.text);
+
     }
 }

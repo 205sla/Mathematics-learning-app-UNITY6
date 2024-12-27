@@ -966,1323 +966,1512 @@
   "semester": 1,
   "type": "정수와 유리수",
   "question": "0을 포함하여 1씩 커지거나 작아지는 수",
-  "correct_answer": "정수"
+  "correct_answer": "정수",
+  "input_form": "답변 형식1"
  },
  {
   "index": 2,
   "semester": 5,
   "type": "이차함수",
   "question": "y = 2(x+1)^2 + 3의 그래프를 x축 방향으로  a만큼, y축 방향으로 b만큼 평행이동하면 y=2x^2이 된다고 한다. 이 때, a+b의 값을 구하시오. \n",
-  "correct_answer": -2
+  "correct_answer": -2,
+  "input_form": "답변 형식2"
  },
  {
   "index": 3,
   "semester": 5,
   "type": "실수와 그 계산",
   "question": "\\sqrt{20-x} 가 정수이다. 자연수 x의 개수는? ",
-  "correct_answer": 5
+  "correct_answer": 5,
+  "input_form": "답변 형식3"
  },
  {
   "index": 4,
   "semester": 5,
   "type": "실수와 그 계산",
   "question": "-5의 전체 제곱의 음의 제곱근은? ",
-  "correct_answer": -5
+  "correct_answer": -5,
+  "input_form": "답변 형식4"
  },
  {
   "index": 5,
   "semester": 5,
   "type": "인수분해 ",
   "question": "합이 -4, 곱이 3인 두 정수는? ",
-  "correct_answer": "-3,-1"
+  "correct_answer": "-3,-1",
+  "input_form": "답변 형식5"
  },
  {
   "index": 6,
   "semester": 1,
   "type": "소인수분해",
   "question": "약수가 1과 자기 자신뿐'의 뜻을 가진 개념은?",
-  "correct_answer": "소수"
+  "correct_answer": "소수",
+  "input_form": "답변 형식6"
  },
  {
   "index": 7,
   "semester": 1,
   "type": "소인수분해",
   "question": "6의 약수를 모두 작성하시오 (양수만)",
-  "correct_answer": "1,2,3,6"
+  "correct_answer": "1,2,3,6",
+  "input_form": "답변 형식7"
  },
  {
   "index": 8,
   "semester": 1,
   "type": "소인수분해",
   "question": "자연수의 약수 중 소수인 것'의 뜻을 가진 개념을 쓰시오",
-  "correct_answer": "소인수"
+  "correct_answer": "소인수",
+  "input_form": "답변 형식8"
  },
  {
   "index": 9,
   "semester": 1,
   "type": "소인수분해",
   "question": "1보다 큰 자연수 중에서 소수가 아닌 수는?",
-  "correct_answer": "합성수"
+  "correct_answer": "합성수",
+  "input_form": "답변 형식9"
  },
  {
   "index": 10,
   "semester": 1,
   "type": "소인수분해",
   "question": "1^99의 값은?",
-  "correct_answer": 1
+  "correct_answer": 1,
+  "input_form": "답변 형식10"
  },
  {
   "index": 11,
   "semester": 1,
   "type": "소인수분해",
   "question": "다음 식의 밑을 구하라. 2^3",
-  "correct_answer": 2
+  "correct_answer": 2,
+  "input_form": "답변 형식11"
  },
  {
   "index": 12,
   "semester": 1,
   "type": "소인수분해",
   "question": "다음 수의 지수를 구하라. 10^9",
-  "correct_answer": 9
+  "correct_answer": 9,
+  "input_form": "답변 형식12"
  },
  {
   "index": 13,
   "semester": 1,
   "type": "소인수분해",
   "question": "다음 수의 약수의 개수를 구하여라. 2^2 x 3^2 x 5",
-  "correct_answer": 18
+  "correct_answer": 18,
+  "input_form": "답변 형식13"
  },
  {
   "index": 14,
   "semester": 1,
   "type": "소인수분해",
   "question": "2^2 x 3^a의 약수의 개수가 12일 때, 자연수 a의 값은?",
-  "correct_answer": 3
+  "correct_answer": 3,
+  "input_form": "답변 형식14"
  },
  {
   "index": 15,
   "semester": 1,
   "type": "최대공약수와 최소공배수",
   "question": "24와 60의 최대공약수는?",
-  "correct_answer": 12
+  "correct_answer": 12,
+  "input_form": "답변 형식15"
  },
  {
   "index": 16,
   "semester": 1,
   "type": "최대공약수와 최소공배수",
   "question": "36과 54의 최소공배수는?",
-  "correct_answer": 108
+  "correct_answer": 108,
+  "input_form": "답변 형식16"
  },
  {
   "index": 17,
   "semester": 1,
   "type": "최대공약수와 최소공배수",
   "question": "70과 80과 90의 최대 공약수는?",
-  "correct_answer": 10
+  "correct_answer": 10,
+  "input_form": "답변 형식17"
  },
  {
   "index": 18,
   "semester": 1,
   "type": "최대공약수와 최소공배수",
   "question": "절댓값이란?",
-  "correct_answer": "0으로부터의 거리"
+  "correct_answer": "0으로부터의 거리",
+  "input_form": "답변 형식18"
  },
  {
   "index": 19,
   "semester": 1,
   "type": "최대공약수와 최소공배수",
   "question": "절댓값 9는?",
-  "correct_answer": 9
+  "correct_answer": 9,
+  "input_form": "답변 형식19"
  },
  {
   "index": 20,
   "semester": 1,
   "type": "최대공약수와 최소공배수",
   "question": "절댓값 -18은?",
-  "correct_answer": 18
+  "correct_answer": 18,
+  "input_form": "답변 형식20"
  },
  {
   "index": 21,
   "semester": 1,
   "type": "최대공약수와 최소공배수",
   "question": "절댓값 -2920은?",
-  "correct_answer": 2920
+  "correct_answer": 2920,
+  "input_form": "답변 형식21"
  },
  {
   "index": 22,
   "semester": 1,
   "type": "최대공약수와 최소공배수",
   "question": "0을 포함하여 1씩 커지거나 작아지는 수는?",
-  "correct_answer": "정수"
+  "correct_answer": "정수",
+  "input_form": "답변 형식22"
  },
  {
   "index": 23,
   "semester": 1,
   "type": "최대공약수와 최소공배수",
   "question": "\\frac{정수}{정수} (단, 분모는 0이 아님.) 꼴로 나타낼 수 있는 수는?",
-  "correct_answer": "유리수"
+  "correct_answer": "유리수",
+  "input_form": "답변 형식23"
  },
  {
   "index": 24,
   "semester": 1,
   "type": "정수와 유리수의 계산",
   "question": "3 + (-4) - (-8) = ",
-  "correct_answer": 7
+  "correct_answer": 7,
+  "input_form": "답변 형식24"
  },
  {
   "index": 25,
   "semester": 1,
   "type": "정수와 유리수의 계산",
   "question": "(-17) - (9) + 1 = ",
-  "correct_answer": -25
+  "correct_answer": -25,
+  "input_form": "답변 형식25"
  },
  {
   "index": 26,
   "semester": 1,
   "type": "정수와 유리수의 계산",
   "question": "2024 + (-2025) + 1 = ",
-  "correct_answer": 0
+  "correct_answer": 0,
+  "input_form": "답변 형식26"
  },
  {
   "index": 27,
   "semester": 1,
   "type": "정수와 유리수의 계산",
   "question": "1 - (-1) + 1 - (-1) + 0 + (-1) = ",
-  "correct_answer": 3
+  "correct_answer": 3,
+  "input_form": "답변 형식27"
  },
  {
   "index": 28,
   "semester": 1,
   "type": "정수와 유리수의 계산",
   "question": "(-7) x 5 x 3 =",
-  "correct_answer": -105
+  "correct_answer": -105,
+  "input_form": "답변 형식28"
  },
  {
   "index": 29,
   "semester": 1,
   "type": "정수와 유리수의 계산",
   "question": "10 x (-3) x (-10)",
-  "correct_answer": 300
+  "correct_answer": 300,
+  "input_form": "답변 형식29"
  },
  {
   "index": 30,
   "semester": 1,
   "type": "정수와 유리수의 계산",
   "question": "(-1) x (-1) x (1) x (-1) x (-1) x(1)",
-  "correct_answer": 1
+  "correct_answer": 1,
+  "input_form": "답변 형식30"
  },
  {
   "index": 31,
   "semester": 2,
   "type": "기본 도형",
   "question": "평각은 몇도인가?",
-  "correct_answer": "180도"
+  "correct_answer": "180도",
+  "input_form": "답변 형식31"
  },
  {
   "index": 32,
   "semester": 2,
   "type": "기본 도형",
   "question": "0도 보다 크고 90도 보다 작은 각은?",
-  "correct_answer": "예각"
+  "correct_answer": "예각",
+  "input_form": "답변 형식32"
  },
  {
   "index": 33,
   "semester": 2,
   "type": "기본 도형",
   "question": "무수히 많은 점들로 이루어져 있는 것은?",
-  "correct_answer": "선"
+  "correct_answer": "선",
+  "input_form": "답변 형식33"
  },
  {
   "index": 34,
   "semester": 2,
   "type": "위치 관계",
   "question": "공간에서 두 직선이 서로 만나지도 않고 평행하지도 않을 때, 두 직선의 관계는?",
-  "correct_answer": "꼬인위치"
+  "correct_answer": "꼬인위치",
+  "input_form": "답변 형식34"
  },
  {
   "index": 35,
   "semester": 2,
   "type": "다각형",
   "question": "삼각형의 내각의 크기의 합은?",
-  "correct_answer": 180
+  "correct_answer": 180,
+  "input_form": "답변 형식35"
  },
  {
   "index": 36,
   "semester": 2,
   "type": "다각형",
   "question": "오각형의 내각의 크기의 합은?",
-  "correct_answer": 540
+  "correct_answer": 540,
+  "input_form": "답변 형식36"
  },
  {
   "index": 37,
   "semester": 2,
   "type": "다각형",
   "question": "사각형의 내각의 크기의 합은?",
-  "correct_answer": 360
+  "correct_answer": 360,
+  "input_form": "답변 형식37"
  },
  {
   "index": 38,
   "semester": 2,
   "type": "원과 부채꼴",
   "question": "한 점으로부터 일정한 거리에 있는 점들로 이루어진 도형은?",
-  "correct_answer": "원"
+  "correct_answer": "원",
+  "input_form": "답변 형식38"
  },
  {
   "index": 39,
   "semester": 2,
   "type": "원과 부채꼴",
   "question": "부채꼴의 넓이는 원의 넓이에 \\frac{k}{360도}를 곱하면 된다. k는? ",
-  "correct_answer": "중심각"
+  "correct_answer": "중심각",
+  "input_form": "답변 형식39"
  },
  {
   "index": 40,
   "semester": 3,
   "type": "유리수와 순환소수",
   "question": "분모의 소인수가 2 또는 (     ) 뿐이면 유한소수이다. 빈칸은?",
-  "correct_answer": 5
+  "correct_answer": 5,
+  "input_form": "답변 형식40"
  },
  {
   "index": 41,
   "semester": 3,
   "type": "유리수와 순환소수",
   "question": "분모의 소인수가 (     )  또는 5뿐이면 유한소수이다. 빈칸은?",
-  "correct_answer": 2
+  "correct_answer": 2,
+  "input_form": "답변 형식41"
  },
  {
   "index": 42,
   "semester": 3,
   "type": "유리수와 순환소수",
   "question": "소수점 아래에 0이 아닌 숫자가 무한 번 나타나는 소수는?",
-  "correct_answer": "무한소수"
+  "correct_answer": "무한소수",
+  "input_form": "답변 형식42"
  },
  {
   "index": 43,
   "semester": 3,
   "type": "단항식의 계산",
   "question": "9a^2 x 4a^3 을 계산하시오",
-  "correct_answer": "36a^5"
+  "correct_answer": "36a^5",
+  "input_form": "답변 형식43"
  },
  {
   "index": 44,
   "semester": 3,
   "type": "단항식의 계산",
   "question": "(2^3)^(k)이 2^15일 때, k는?",
-  "correct_answer": 5
+  "correct_answer": 5,
+  "input_form": "답변 형식44"
  },
  {
   "index": 45,
   "semester": 3,
   "type": "단항식의 계산",
   "question": "4^3 + 4^3 +4^3 +4^3 를 간단히 하면?  ",
-  "correct_answer": "4^4"
+  "correct_answer": "4^4",
+  "input_form": "답변 형식45"
  },
  {
   "index": 46,
   "semester": 3,
   "type": "단항식의 계산",
   "question": "a^2 x b^3 x a^3 x b^4 를 간단히 하면? ",
-  "correct_answer": "a^5b^7"
+  "correct_answer": "a^5b^7",
+  "input_form": "답변 형식46"
  },
  {
   "index": 47,
   "semester": 3,
   "type": "단항식의 계산",
   "question": "(3x) x 4 는? ",
-  "correct_answer": "12x"
+  "correct_answer": "12x",
+  "input_form": "답변 형식47"
  },
  {
   "index": 48,
   "semester": 3,
   "type": "단항식의 계산",
   "question": "\\frac{8a}{2}",
-  "correct_answer": "4a"
+  "correct_answer": "4a",
+  "input_form": "답변 형식48"
  },
  {
   "index": 49,
   "semester": 3,
   "type": "단항식의 계산",
   "question": "(-8n) x 2 ",
-  "correct_answer": "-16n"
+  "correct_answer": "-16n",
+  "input_form": "답변 형식49"
  },
  {
   "index": 50,
   "semester": 3,
   "type": "단항식의 계산",
   "question": "5a x 5 x 4 ",
-  "correct_answer": "100a"
+  "correct_answer": "100a",
+  "input_form": "답변 형식50"
  },
  {
   "index": 51,
   "semester": 3,
   "type": "단항식의 계산",
   "question": "(-4y) x 3 ",
-  "correct_answer": "-12y"
+  "correct_answer": "-12y",
+  "input_form": "답변 형식51"
  },
  {
   "index": 52,
   "semester": 3,
   "type": "단항식의 계산",
   "question": "5ab x 2a",
-  "correct_answer": "10a^2b"
+  "correct_answer": "10a^2b",
+  "input_form": "답변 형식52"
  },
  {
   "index": 53,
   "semester": 3,
   "type": "다항식의 계산",
   "question": "(2a + 5b) +(3a + b)의 값은?",
-  "correct_answer": "5a + 6b"
+  "correct_answer": "5a + 6b",
+  "input_form": "답변 형식53"
  },
  {
   "index": 54,
   "semester": 3,
   "type": "다항식의 계산",
   "question": "(5a+2)−(3a−4)의 값은?",
-  "correct_answer": "2a + 6"
+  "correct_answer": "2a + 6",
+  "input_form": "답변 형식54"
  },
  {
   "index": 55,
   "semester": 3,
   "type": "다항식의 계산",
   "question": "(6a−2)+(2a+4)의 값은?",
-  "correct_answer": "8a + 2"
+  "correct_answer": "8a + 2",
+  "input_form": "답변 형식55"
  },
  {
   "index": 56,
   "semester": 3,
   "type": "다항식의 계산",
   "question": "(4a+2)−(a+5)의 값은?",
-  "correct_answer": "3a - 3"
+  "correct_answer": "3a - 3",
+  "input_form": "답변 형식56"
  },
  {
   "index": 57,
   "semester": 3,
   "type": "다항식의 계산",
   "question": "(5m+2)−(3m−1)의 값은?",
-  "correct_answer": "2m + 3"
+  "correct_answer": "2m + 3",
+  "input_form": "답변 형식57"
  },
  {
   "index": 58,
   "semester": 3,
   "type": "다항식의 계산",
   "question": "(6a+4)+(2a−1)의 값은?",
-  "correct_answer": "8a + 3"
+  "correct_answer": "8a + 3",
+  "input_form": "답변 형식58"
  },
  {
   "index": 59,
   "semester": 3,
   "type": "다항식의 계산",
   "question": "7(3a-4)의 값은?",
-  "correct_answer": "21a - 28"
+  "correct_answer": "21a - 28",
+  "input_form": "답변 형식59"
  },
  {
   "index": 60,
   "semester": 3,
   "type": "다항식의 계산",
   "question": "(a-1) + (b-2)의 값은?",
-  "correct_answer": "a + b - 3"
+  "correct_answer": "a + b - 3",
+  "input_form": "답변 형식60"
  },
  {
   "index": 61,
   "semester": 3,
   "type": "다항식의 계산",
   "question": "(2a+3)+(4a−5)의 값은?",
-  "correct_answer": "6a - 2"
+  "correct_answer": "6a - 2",
+  "input_form": "답변 형식61"
  },
  {
   "index": 62,
   "semester": 3,
   "type": "다항식의 계산",
   "question": "(5b+2)−(3b−4)의 값은?",
-  "correct_answer": "2b + 6"
+  "correct_answer": "2b + 6",
+  "input_form": "답변 형식62"
  },
  {
   "index": 63,
   "semester": 3,
   "type": "일차함수 ",
   "question": "일차함수 y = ax +b의 기울기는?",
-  "correct_answer": "a"
+  "correct_answer": "a",
+  "input_form": "답변 형식63"
  },
  {
   "index": 64,
   "semester": 3,
   "type": "일차함수 ",
   "question": "함수 f(x) = 2x + 3의 기울기는?",
-  "correct_answer": 2
+  "correct_answer": 2,
+  "input_form": "답변 형식64"
  },
  {
   "index": 65,
   "semester": 3,
   "type": "일차함수 ",
   "question": "f(x) = -x + 4 일 때, f(2) 의 값을 구하시오.",
-  "correct_answer": 2
+  "correct_answer": 2,
+  "input_form": "답변 형식65"
  },
  {
   "index": 66,
   "semester": 3,
   "type": "일차함수 ",
   "question": "함수 y=2x -8의 x절편은?",
-  "correct_answer": 4
+  "correct_answer": 4,
+  "input_form": "답변 형식66"
  },
  {
   "index": 67,
   "semester": 3,
   "type": "일차함수 ",
   "question": "함수 y=2x -8의 y절편은?",
-  "correct_answer": -8
+  "correct_answer": -8,
+  "input_form": "답변 형식67"
  },
  {
   "index": 68,
   "semester": 3,
   "type": "일차함수 ",
   "question": "함수 y=2x -8의 기울기는?",
-  "correct_answer": 2
+  "correct_answer": 2,
+  "input_form": "답변 형식68"
  },
  {
   "index": 69,
   "semester": 3,
   "type": "일차함수 ",
   "question": "y축과 만나는 점의 y좌표를 뭐라고 부르는가?",
-  "correct_answer": "y절편"
+  "correct_answer": "y절편",
+  "input_form": "답변 형식69"
  },
  {
   "index": 70,
   "semester": 3,
   "type": "일차함수 ",
   "question": "\\frac{y증가량}{x증가량}은?",
-  "correct_answer": "기울기"
+  "correct_answer": "기울기",
+  "input_form": "답변 형식70"
  },
  {
   "index": 71,
   "semester": 3,
   "type": "일차함수 ",
   "question": "함수 y=2x-3은 함수 y=2x를 y축으로 얼만큼 평행이동 하였는가?",
-  "correct_answer": -3
+  "correct_answer": -3,
+  "input_form": "답변 형식71"
  },
  {
   "index": 72,
   "semester": 4,
   "type": "도형의 닮음",
   "question": "두 삼각형 DEF와 GHI의 변의 비율이 3 : 5일 때, DE = 9cm이면 GH 의 길이를 구하시오",
-  "correct_answer": 15
+  "correct_answer": 15,
+  "input_form": "답변 형식72"
  },
  {
   "index": 73,
   "semester": 4,
   "type": "도형의 닮음",
   "question": "두 정사각형의 변 길이가 각각 3cm와 6cm일 때, 넓이의 비율은 얼마인가요?",
-  "correct_answer": "01:04"
+  "correct_answer": "01:04",
+  "input_form": "답변 형식73"
  },
  {
   "index": 74,
   "semester": 4,
   "type": "도형의 닮음",
   "question": "닮은 두 평면도형의 닮음비가 2:5이면 둘레의 길이의 비는?",
-  "correct_answer": "02:05"
+  "correct_answer": "02:05",
+  "input_form": "답변 형식74"
  },
  {
   "index": 75,
   "semester": 4,
   "type": "도형의 닮음",
   "question": "닮은 두 평면도형의 닮음비가 3:5이면 둘레의 길이의 비는?",
-  "correct_answer": "03:05"
+  "correct_answer": "03:05",
+  "input_form": "답변 형식75"
  },
  {
   "index": 76,
   "semester": 4,
   "type": "도형의 닮음",
   "question": "닮은 두 평면도형의 닮음비가 3:7이면 넓이의 비는?",
-  "correct_answer": "09:49"
+  "correct_answer": "09:49",
+  "input_form": "답변 형식76"
  },
  {
   "index": 77,
   "semester": 4,
   "type": "도형의 닮음",
   "question": "닮은 두 평면도형의 닮음비가 5:8이면 넓이의 비는?",
-  "correct_answer": "25:64"
+  "correct_answer": "25:64",
+  "input_form": "답변 형식77"
  },
  {
   "index": 78,
   "semester": 4,
   "type": "도형의 닮음",
   "question": "닮은 두 평면도형의 닮음비가 1:4이면 부피의 비는?",
-  "correct_answer": "1:64"
+  "correct_answer": "1:64",
+  "input_form": "답변 형식78"
  },
  {
   "index": 79,
   "semester": 4,
   "type": "도형의 닮음",
   "question": "닮은 두 평면도형의 닮음비가 2:3이면 겉넓이의 비는?",
-  "correct_answer": "04:09"
+  "correct_answer": "04:09",
+  "input_form": "답변 형식79"
  },
  {
   "index": 80,
   "semester": 5,
   "type": "이차방정식",
   "question": "이차방정식 x^2 - 4x + 4 = 0의 해는?",
-  "correct_answer": "2 (중근)"
+  "correct_answer": "2 (중근)",
+  "input_form": "답변 형식80"
  },
  {
   "index": 81,
   "semester": 5,
   "type": "이차방정식",
   "question": "이차방정식 x^2 + 6x + 9 = 0의 해는?",
-  "correct_answer": "-3(중근)"
+  "correct_answer": "-3(중근)",
+  "input_form": "답변 형식81"
  },
  {
   "index": 82,
   "semester": 5,
   "type": "이차방정식",
   "question": "이차방정식 x^2 - 1 = 0의 두 근을 구하시오",
-  "correct_answer": "1,-1"
+  "correct_answer": "1,-1",
+  "input_form": "답변 형식82"
  },
  {
   "index": 83,
   "semester": 5,
   "type": "이차방정식",
   "question": "두 수의 합이 10이고 곱이 21인 두 수를 구하시오",
-  "correct_answer": "3,7"
+  "correct_answer": "3,7",
+  "input_form": "답변 형식83"
  },
  {
   "index": 84,
   "semester": 5,
   "type": "이차방정식",
   "question": "어떤 상품의 가격이 100만원에서 20% 할인된 가격을 구하시오",
-  "correct_answer": 80
+  "correct_answer": 80,
+  "input_form": "답변 형식84"
  },
  {
   "index": 85,
   "semester": 5,
   "type": "이차함수",
   "question": "y = x^2 - 2x - 3의 대칭축은?",
-  "correct_answer": "x = 1"
+  "correct_answer": "x = 1",
+  "input_form": "답변 형식85"
  },
  {
   "index": 86,
   "semester": 5,
   "type": "이차함수",
   "question": "y = x^2 + 4x + 4의 꼭짓점은?",
-  "correct_answer": "(-2, 0)"
+  "correct_answer": "(-2, 0)",
+  "input_form": "답변 형식86"
  },
  {
   "index": 87,
   "semester": 5,
   "type": "이차함수",
   "question": "함수 y=ax^2 + bx + c에서 a가 될 수 없는 수는?",
-  "correct_answer": 0
+  "correct_answer": 0,
+  "input_form": "답변 형식87"
  },
  {
   "index": 88,
   "semester": 5,
   "type": "이차방정식",
   "question": "이차방정식 x^2 - 6x + 9 = 0의 중근을 구하시오",
-  "correct_answer": 3
+  "correct_answer": 3,
+  "input_form": "답변 형식88"
  },
  {
   "index": 89,
   "semester": 5,
   "type": "이차방정식",
   "question": "이차방정식 x^2 + 5x + 6 = 0의 두 근을 구하시오",
-  "correct_answer": "-2,-3"
+  "correct_answer": "-2,-3",
+  "input_form": "답변 형식89"
  },
  {
   "index": 90,
   "semester": 5,
   "type": "이차방정식",
   "question": "어떤 직사각형의 넓이가 45이고, 가로의 길이가 세로의 3배일 때, 가로와 세로의 길이는?",
-  "correct_answer": "가로:15, 세로:5"
+  "correct_answer": "가로:15, 세로:5",
+  "input_form": "답변 형식90"
  },
  {
   "index": 91,
   "semester": 5,
   "type": "피타고라스 정리",
   "question": "다음과 같은 좌표평면 위의 두 저 사이의 거리는? O(0,0), A(-3,3)",
-  "correct_answer": "3\\sqrt{2}"
+  "correct_answer": "3\\sqrt{2}",
+  "input_form": "답변 형식91"
  },
  {
   "index": 92,
   "semester": 5,
   "type": "피타고라스 정리",
   "question": "빗변의 길이가 (13cm)인 직각삼각형에서 한 변의 길이가 (5cm)일 때, 나머지 변의 길이는?",
-  "correct_answer": 12
+  "correct_answer": 12,
+  "input_form": "답변 형식92"
  },
  {
   "index": 93,
   "semester": 5,
   "type": "피타고라스 정리",
   "question": "직각삼각형의 두 변이 (9cm)와 (12cm)일 때, 빗변의 길이를 구하시오",
-  "correct_answer": 15
+  "correct_answer": 15,
+  "input_form": "답변 형식93"
  },
  {
   "index": 94,
   "semester": 5,
   "type": "피타고라스 정리",
   "question": "직각삼각형에서 빗변의 길이가 (17cm)이고, 한 변의 길이가 (8cm)일 때, 나머지 변의 길이는?",
-  "correct_answer": 15
+  "correct_answer": 15,
+  "input_form": "답변 형식94"
  },
  {
   "index": 95,
   "semester": 5,
   "type": "피타고라스 정리",
   "question": "직각삼각형에서 두 변의 길이가 각각 (30cm)와 (40cm)일 때, 빗변의 길이는?",
-  "correct_answer": 50
+  "correct_answer": 50,
+  "input_form": "답변 형식95"
  },
  {
   "index": 96,
   "semester": 5,
   "type": "피타고라스 정리",
   "question": "두 변의 길이가 (8cm)와 (15cm)인 직각삼각형에서 빗변의 길이는?",
-  "correct_answer": 17
+  "correct_answer": 17,
+  "input_form": "답변 형식96"
  },
  {
   "index": 97,
   "semester": 5,
   "type": "피타고라스 정리",
   "question": "두 변의 길이가 (10cm)와 (24cm)인 직각삼각형에서 빗변의 길이는?",
-  "correct_answer": 26
+  "correct_answer": 26,
+  "input_form": "답변 형식97"
  },
  {
   "index": 98,
   "semester": 5,
   "type": "피타고라스 정리",
   "question": "점 A(1,2)와 점 B(4,6) 사이의 거리를 구하시오",
-  "correct_answer": 5
+  "correct_answer": 5,
+  "input_form": "답변 형식98"
  },
  {
   "index": 99,
   "semester": 5,
   "type": "피타고라스 정리",
   "question": "점 A(0,0)와 점 B(5,5) 사이의 거리를 구하시오",
-  "correct_answer": "5\\sqrt{2}"
+  "correct_answer": "5\\sqrt{2}",
+  "input_form": "답변 형식99"
  },
  {
   "index": 100,
   "semester": 5,
   "type": "피타고라스 정리",
   "question": "점 A(-3,4)와 점 B(1,7) 사이의 거리를 구하시오",
-  "correct_answer": 5
+  "correct_answer": 5,
+  "input_form": "답변 형식100"
  },
  {
   "index": 101,
   "semester": 5,
   "type": "피타고라스 정리",
   "question": "한 변의 길이가 6cm인 정삼각형의 높이를 구하세요",
-  "correct_answer": "2\\sqrt{3}"
+  "correct_answer": "2\\sqrt{3}",
+  "input_form": "답변 형식101"
  },
  {
   "index": 102,
   "semester": 5,
   "type": "피타고라스 정리",
   "question": "정삼각형의 한 변의 길이가 8cm일 때, 넓이를 구하세요",
-  "correct_answer": "16\\sqrt{3}"
+  "correct_answer": "16\\sqrt{3}",
+  "input_form": "답변 형식102"
  },
  {
   "index": 103,
   "semester": 5,
   "type": "피타고라스 정리",
   "question": "넓이가 24\\sqrt{3}cm²인 정삼각형의 한 변의 길이를 구하세요",
-  "correct_answer": "4\\sqrt{6}"
+  "correct_answer": "4\\sqrt{6}",
+  "input_form": "답변 형식103"
  },
  {
   "index": 104,
   "semester": 5,
   "type": "피타고라스 정리",
   "question": "정삼각형의 한 변의 길이가 14cm일 때, 이 정삼각형의 넓이를 구하세요",
-  "correct_answer": "7\\sqrt{3}"
+  "correct_answer": "7\\sqrt{3}",
+  "input_form": "답변 형식104"
  },
  {
   "index": 105,
   "semester": 5,
   "type": "피타고라스 정리",
   "question": "정삼각형의 높이가 5\\sqrt{3} cm일 때, 한 변의 길이를 구하세요",
-  "correct_answer": 10
+  "correct_answer": 10,
+  "input_form": "답변 형식105"
  },
  {
   "index": 106,
   "semester": 5,
   "type": "피타고라스 정리",
   "question": "정삼각형의 한 변의 길이가 12cm일 때, 이 정삼각형의 높이를 구하세요",
-  "correct_answer": "6\\sqrt{3}"
+  "correct_answer": "6\\sqrt{3}",
+  "input_form": "답변 형식106"
  },
  {
   "index": 107,
   "semester": 5,
   "type": "피타고라스 정리",
   "question": "정삼각형의 넓이가 4\\sqrt{3}cm²일 때, 한 변의 길이를 구하세요",
-  "correct_answer": 4
+  "correct_answer": 4,
+  "input_form": "답변 형식107"
  },
  {
   "index": 108,
   "semester": 5,
   "type": "피타고라스 정리",
   "question": "직사각형의 가로가 10cm, 세로가 5cm일 때, 대각선의 길이를 구하세요",
-  "correct_answer": "10\\sqrt{5}"
+  "correct_answer": "10\\sqrt{5}",
+  "input_form": "답변 형식108"
  },
  {
   "index": 109,
   "semester": 5,
   "type": "피타고라스 정리",
   "question": "직사각형의 대각선의 길이가 13cm이고, 가로가 5cm일 때, 세로의 길이를 구하세요",
-  "correct_answer": 12
+  "correct_answer": 12,
+  "input_form": "답변 형식109"
  },
  {
   "index": 110,
   "semester": 5,
   "type": "피타고라스 정리",
   "question": "가로가 12cm, 세로가 9cm인 직사각형의 대각선 길이를 구하세요",
-  "correct_answer": 15
+  "correct_answer": 15,
+  "input_form": "답변 형식110"
  },
  {
   "index": 111,
   "semester": 5,
   "type": "피타고라스 정리",
   "question": "정사각형의 한 변의 길이가 7cm일 때, 대각선의 길이를 구하세요",
-  "correct_answer": "7\\sqrt{2}"
+  "correct_answer": "7\\sqrt{2}",
+  "input_form": "답변 형식111"
  },
  {
   "index": 112,
   "semester": 5,
   "type": "피타고라스 정리",
   "question": "한 변의 길이가 5\\sqrt{2} cm인 정사각형의 대각선 길이를 구하세요",
-  "correct_answer": " 10"
+  "correct_answer": " 10",
+  "input_form": "답변 형식112"
  },
  {
   "index": 113,
   "semester": 5,
   "type": "피타고라스 정리",
   "question": "정사각형의 대각선 길이가 8cm일 때, 한 변의 길이를 구하세요",
-  "correct_answer": "4\\sqrt{2}"
+  "correct_answer": "4\\sqrt{2}",
+  "input_form": "답변 형식113"
  },
  {
   "index": 114,
   "semester": 5,
   "type": "피타고라스 정리",
   "question": "한 변의 길이가 12cm인 정사각형의 대각선 길이를 구하세요",
-  "correct_answer": "12\\sqrt{2}"
+  "correct_answer": "12\\sqrt{2}",
+  "input_form": "답변 형식114"
  },
  {
   "index": 115,
   "semester": 5,
   "type": "피타고라스 정리",
   "question": "가로 4cm, 세로 3cm, 높이 5cm인 직육면체의 대각선 길이를 구하세요",
-  "correct_answer": "5\\sqrt{2}"
+  "correct_answer": "5\\sqrt{2}",
+  "input_form": "답변 형식115"
  },
  {
   "index": 116,
   "semester": 5,
   "type": "피타고라스 정리",
   "question": "직육면체의 가로가 1cm, 세로가 4cm, 높이가 2cm일 때, 대각선의 길이를 구하세요",
-  "correct_answer": "\\sqrt{21}"
+  "correct_answer": "\\sqrt{21}",
+  "input_form": "답변 형식116"
  },
  {
   "index": 117,
   "semester": 5,
   "type": "피타고라스 정리",
   "question": "가로 6cm, 세로 8cm, 높이 10cm인 직육면체의 대각선 길이를 구하세요",
-  "correct_answer": "10\\sqrt{2}"
+  "correct_answer": "10\\sqrt{2}",
+  "input_form": "답변 형식117"
  },
  {
   "index": 118,
   "semester": 5,
   "type": "피타고라스 정리",
   "question": "한 변의 길이가 5cm인 정육면체의 대각선 길이를 구하세요",
-  "correct_answer": "5\\sqrt{3}"
+  "correct_answer": "5\\sqrt{3}",
+  "input_form": "답변 형식118"
  },
  {
   "index": 119,
   "semester": 5,
   "type": "피타고라스 정리",
   "question": "정육면체의 대각선 길이가 10\\sqrt{3} cm일 때, 한 변의 길이를 구하세요",
-  "correct_answer": 10
+  "correct_answer": 10,
+  "input_form": "답변 형식119"
  },
  {
   "index": 120,
   "semester": 5,
   "type": "피타고라스 정리",
   "question": "정육면체의 한 변의 길이가 3cm일 때, 대각선 길이를 구하세요",
-  "correct_answer": "3\\sqrt{3}"
+  "correct_answer": "3\\sqrt{3}",
+  "input_form": "답변 형식120"
  },
  {
   "index": 121,
   "semester": 5,
   "type": "피타고라스 정리",
   "question": "한 변의 길이가 6cm인 정사면체의 높이를 구하세요",
-  "correct_answer": "2\\sqrt{6}"
+  "correct_answer": "2\\sqrt{6}",
+  "input_form": "답변 형식121"
  },
  {
   "index": 122,
   "semester": 5,
   "type": "피타고라스 정리",
   "question": "정사면체의 한 변의 길이가 12cm일 때, 부피를 구하세요",
-  "correct_answer": "144\\sqrt{2}"
+  "correct_answer": "144\\sqrt{2}",
+  "input_form": "답변 형식122"
  },
  {
   "index": 123,
   "semester": 5,
   "type": "피타고라스 정리",
   "question": "정사면체의 높이가  4\\sqrt{6} cm일 때, 한 변의 길이를 구하세요",
-  "correct_answer": 12
+  "correct_answer": 12,
+  "input_form": "답변 형식123"
  },
  {
   "index": 124,
   "semester": 5,
   "type": "피타고라스 정리",
   "question": "한 변의 길이가 6cm인 정사면체의 부피를 구하세요",
-  "correct_answer": "18\\sqrt{2}"
+  "correct_answer": "18\\sqrt{2}",
+  "input_form": "답변 형식124"
  },
  {
   "index": 125,
   "semester": 5,
   "type": "피타고라스 정리",
   "question": "밑면의 변의 길이가6cm,높이가8cm인 정사각뿔의 부피를 구하세요",
-  "correct_answer": 96
+  "correct_answer": 96,
+  "input_form": "답변 형식125"
  },
  {
   "index": 126,
   "semester": 5,
   "type": "피타고라스 정리",
   "question": "정사각뿔의 밑면의 변의 길이가10cm,높이가12cm일 때,부피를 구하세요",
-  "correct_answer": 400
+  "correct_answer": 400,
+  "input_form": "답변 형식126"
  },
  {
   "index": 127,
   "semester": 5,
   "type": "피타고라스 정리",
   "question": "정사각뿔의 높이가 5\\sqrt{3} cm일 때, 밑면의 변의 길이가 3cm일 때의 부피를 구하세요",
-  "correct_answer": "15\\sqrt{3}"
+  "correct_answer": "15\\sqrt{3}",
+  "input_form": "답변 형식127"
  },
  {
   "index": 128,
   "semester": 5,
   "type": "피타고라스 정리",
   "question": "반지름이 3cm, 높이가 5cm인 원뿔의 부피를 구하세요.",
-  "correct_answer": "15\\pi"
+  "correct_answer": "15\\pi",
+  "input_form": "답변 형식128"
  },
  {
   "index": 129,
   "semester": 5,
   "type": "피타고라스 정리",
   "question": "원뿔의 부피가 30\\pi cm³일 때, 반지름이 3cm일 때, 높이를 구하세요",
-  "correct_answer": 10
+  "correct_answer": 10,
+  "input_form": "답변 형식129"
  },
  {
   "index": 130,
   "semester": 5,
   "type": "피타고라스 정리",
   "question": "반지름이 6cm, 높이가 10cm인 원뿔의 부피를 구하세요",
-  "correct_answer": "120\\pi\n"
+  "correct_answer": "120\\pi\n",
+  "input_form": "답변 형식130"
  },
  {
   "index": 131,
   "semester": 6,
   "type": "삼각비",
   "question": "\\sin 30은?",
-  "correct_answer": "\\frac{1}{2}"
+  "correct_answer": "\\frac{1}{2}",
+  "input_form": "답변 형식131"
  },
  {
   "index": 132,
   "semester": 6,
   "type": "삼각비",
   "question": "\\sin 45는?",
-  "correct_answer": "\\SQRT(2)\/2"
+  "correct_answer": "\\SQRT(2)\/2",
+  "input_form": "답변 형식132"
  },
  {
   "index": 133,
   "semester": 6,
   "type": "삼각비",
   "question": "\\sin 60은?",
-  "correct_answer": "\\SQRT(3)\/2"
+  "correct_answer": "\\SQRT(3)\/2",
+  "input_form": "답변 형식133"
  },
  {
   "index": 134,
   "semester": 6,
   "type": "삼각비",
   "question": "\\cos 30은?",
-  "correct_answer": "\\SQRT(3)\/2"
+  "correct_answer": "\\SQRT(3)\/2",
+  "input_form": "답변 형식134"
  },
  {
   "index": 135,
   "semester": 6,
   "type": "삼각비",
   "question": "\\cos 45는?",
-  "correct_answer": "\\SQRT(2)\/2"
+  "correct_answer": "\\SQRT(2)\/2",
+  "input_form": "답변 형식135"
  },
  {
   "index": 136,
   "semester": 6,
   "type": "삼각비",
   "question": "\\cos 60은?",
-  "correct_answer": "1\/2"
+  "correct_answer": "1\/2",
+  "input_form": "답변 형식136"
  },
  {
   "index": 137,
   "semester": 6,
   "type": "삼각비",
   "question": "\\tan 30은?",
-  "correct_answer": "\\SQRT(3)\/3"
+  "correct_answer": "\\SQRT(3)\/3",
+  "input_form": "답변 형식137"
  },
  {
   "index": 138,
   "semester": 6,
   "type": "삼각비",
   "question": "\\tan 45는?",
-  "correct_answer": 1
+  "correct_answer": 1,
+  "input_form": "답변 형식138"
  },
  {
   "index": 139,
   "semester": 6,
   "type": "삼각비",
   "question": "\\tan 60은?",
-  "correct_answer": "\\sqrt{3} "
+  "correct_answer": "\\sqrt{3} ",
+  "input_form": "답변 형식139"
  },
  {
   "index": 140,
   "semester": 6,
   "type": "삼각비",
   "question": "\\sin 0은?",
-  "correct_answer": 0
+  "correct_answer": 0,
+  "input_form": "답변 형식140"
  },
  {
   "index": 141,
   "semester": 6,
   "type": "삼각비",
   "question": "\\sin 90은?",
-  "correct_answer": 1
+  "correct_answer": 1,
+  "input_form": "답변 형식141"
  },
  {
   "index": 142,
   "semester": 6,
   "type": "삼각비",
   "question": "\\cos 0은?",
-  "correct_answer": 1
+  "correct_answer": 1,
+  "input_form": "답변 형식142"
  },
  {
   "index": 143,
   "semester": 6,
   "type": "삼각비",
   "question": "\\cos 90은?",
-  "correct_answer": 0
+  "correct_answer": 0,
+  "input_form": "답변 형식143"
  },
  {
   "index": 144,
   "semester": 6,
   "type": "삼각비",
   "question": "\\tan 0은?",
-  "correct_answer": 0
+  "correct_answer": 0,
+  "input_form": "답변 형식144"
  },
  {
   "index": 145,
   "semester": 3,
   "type": "문자의 사용과 식의 계산",
   "question": "a가 2 일때, 2a+3은? ",
-  "correct_answer": 7
+  "correct_answer": 7,
+  "input_form": "답변 형식145"
  },
  {
   "index": 146,
   "semester": 3,
   "type": "문자의 사용과 식의 계산",
   "question": "('-12x+4y)를 4로 나누면? ",
-  "correct_answer": "-3x+y"
+  "correct_answer": "-3x+y",
+  "input_form": "답변 형식146"
  },
  {
   "index": 147,
   "semester": 3,
   "type": "일차방정식의 풀이 ",
   "question": "3(x-1)=6x+3의 해를 구하면? ",
-  "correct_answer": "-2"
+  "correct_answer": "-2",
+  "input_form": "답변 형식147"
  },
  {
   "index": 148,
   "semester": 3,
   "type": "일차방정식의 풀이 ",
   "question": "0.6x-1.7=1.3 이 방정식을 풀기 위해서 양변에 곱할 수는? ",
-  "correct_answer": 10
+  "correct_answer": 10,
+  "input_form": "답변 형식148"
  },
  {
   "index": 149,
   "semester": 3,
   "type": "일차방정식의 활용 ",
   "question": "연속하는 두 자연수'라는 제시어가 있을 때 한 미지수를 a로 두었다면 다른 수는? ",
-  "correct_answer": "a+2또는 a-2"
+  "correct_answer": "a+2또는 a-2",
+  "input_form": "답변 형식149"
  },
  {
   "index": 150,
   "semester": 3,
   "type": "일차방정식의 활용 ",
   "question": "k원 만큼의 돈이 있었는데 10%의 손해를 보았다. 이 표현을 처리하기 위해서 k에 어떤 수를 곱할 것인가? ",
-  "correct_answer": 0.9
+  "correct_answer": 0.9,
+  "input_form": "답변 형식150"
  },
  {
   "index": 151,
   "semester": 1,
   "type": "좌표와 그래표 ",
   "question": "y축은 몇 사분면에 속해 있는가? ",
-  "correct_answer": "어느 사분면에도 속해있지 않다 "
+  "correct_answer": "어느 사분면에도 속해있지 않다 ",
+  "input_form": "답변 형식151"
  },
  {
   "index": 152,
   "semester": 1,
   "type": "좌표와 그래표 ",
   "question": "어떤 점이 좌표평면 상에서 y축 위에 있다면 그 점의 x값은?  ",
-  "correct_answer": 0
+  "correct_answer": 0,
+  "input_form": "답변 형식152"
  },
  {
   "index": 153,
   "semester": 1,
   "type": "정비례와 반비례 ",
   "question": "y=-6x는 x가 커질수록 y 값이 음수가 되어 점점 작아진다. 이 식은 정비례인가 반비례인가? ",
-  "correct_answer": "정비례 "
+  "correct_answer": "정비례 ",
+  "input_form": "답변 형식153"
  },
  {
   "index": 154,
   "semester": 1,
   "type": "정비례와 반비례 ",
   "question": "y=-\\frac{4}{x} 그래프가 점 (a,-2)를 지날때 a의 값은? ",
-  "correct_answer": 2
+  "correct_answer": 2,
+  "input_form": "답변 형식154"
  },
  {
   "index": 155,
   "semester": 2,
   "type": "작도와 합동 ",
   "question": "(      ) 이란 두 평면도형을 포개었을 때 완전히 포개어지는 것을 말한다. 크기와 모양이 똑같다는 뜻이 된다. ",
-  "correct_answer": "합동"
+  "correct_answer": "합동",
+  "input_form": "답변 형식155"
  },
  {
   "index": 156,
   "semester": 2,
   "type": "작도와 합동 ",
   "question": "SAS 합동이란 두 삼각형의 대응하는 두 변의 길이가 각각 같고 (        )가 같을 때를 말한다. ",
-  "correct_answer": "끼인 각의 크기"
+  "correct_answer": "끼인 각의 크기",
+  "input_form": "답변 형식156"
  },
  {
   "index": 157,
   "semester": 2,
   "type": "다면체와 회전체 ",
   "question": "삼각기둥의 면의 개수는? ",
-  "correct_answer": 5
+  "correct_answer": 5,
+  "input_form": "답변 형식157"
  },
  {
   "index": 158,
   "semester": 2,
   "type": "다면체와 회전체 ",
   "question": "구의 회전축은 몇 개인가? ",
-  "correct_answer": "무수히 많다 "
+  "correct_answer": "무수히 많다 ",
+  "input_form": "답변 형식158"
  },
  {
   "index": 159,
   "semester": 2,
   "type": "입체도형의 겉넓이와 부피 ",
   "question": "피라미드를 입체도형이라고 본다면 (      )라고 볼 수 있다. ",
-  "correct_answer": "사각뿔 "
+  "correct_answer": "사각뿔 ",
+  "input_form": "답변 형식159"
  },
  {
   "index": 160,
   "semester": 2,
   "type": "입체도형의 겉넓이와 부피 ",
   "question": "점을 무수히 이으면 선이 되고, 선을 무수히 모으면 면이 되고, 면을 무수히 모으면 (      ) 개념이 된다. ",
-  "correct_answer": "부피 (입체도형)"
+  "correct_answer": "부피 (입체도형)",
+  "input_form": "답변 형식160"
  },
  {
   "index": 161,
   "semester": 2,
   "type": "자료의 정리와 해석 ",
   "question": "히스토그램에서 그램은 인스타그램처럼 그림을 뜻ㅎ하는데, 가로축에는 (        )을 표시한다.  ",
-  "correct_answer": "계급 "
+  "correct_answer": "계급 ",
+  "input_form": "답변 형식161"
  },
  {
   "index": 162,
   "semester": 2,
   "type": "자료의 정리와 해석 ",
   "question": "자꾸 달력이나 그래프를 찢는 문제가 나오는 것은 학생들의 (      )을 길러주기 위함이다. ",
-  "correct_answer": "추리력 (유추력,논리력 등) "
+  "correct_answer": "추리력 (유추력,논리력 등) ",
+  "input_form": "답변 형식162"
  },
  {
   "index": 163,
   "semester": 3,
   "type": "연립방정식 ",
   "question": "두 방정식의 양변에 적당한 수를 곱해서 두 식을 변끼리 더하거나 빼서 한 미지수를 소거한 후 해를 구하는 방법을 (        )법 이라고 한다 ",
-  "correct_answer": "가감"
+  "correct_answer": "가감",
+  "input_form": "답변 형식163"
  },
  {
   "index": 164,
   "semester": 3,
   "type": "연립방정식 ",
   "question": "형과 동생의 나이차는 5살이고 두 형제의 나이의 합은 33살이다. 형의 나이는 ? ",
-  "correct_answer": "19살 "
+  "correct_answer": "19살 ",
+  "input_form": "답변 형식164"
  },
  {
   "index": 165,
   "semester": 3,
   "type": "연립방정식의 활용 ",
   "question": "x,y로 구성된 일차방정식의 한 해가 (2,3)이라고 할 때, 3을 문자 (    )에 대입해야 한다 ",
-  "correct_answer": "y "
+  "correct_answer": "y ",
+  "input_form": "답변 형식165"
  },
  {
   "index": 166,
   "semester": 3,
   "type": "연립방정식의 활용 ",
   "question": "연립방정식에서 좌변은 위 아래 식이 완전히 똑같은데 우변의 숫자가 다른 경우 해가 (      ) ",
-  "correct_answer": "없다 "
+  "correct_answer": "없다 ",
+  "input_form": "답변 형식166"
  },
  {
   "index": 167,
   "semester": 3,
   "type": "일차부등식 ",
   "question": "4x+1 < 2x -3을 만족하는 가장 큰 정수는? ",
-  "correct_answer": "-3"
+  "correct_answer": "-3",
+  "input_form": "답변 형식167"
  },
  {
   "index": 168,
   "semester": 3,
   "type": "일차부등식 ",
   "question": "부등호의 종류는 모두 (     ) 가지가 있다 ",
-  "correct_answer": 4
+  "correct_answer": 4,
+  "input_form": "답변 형식168"
  },
  {
   "index": 169,
   "semester": 3,
   "type": "연립일차부등식 ",
   "question": "입장료를 30%할인해준다고 하면 할인된 입장료는 원래 입장료에서 얼마를 곱해야 하는가? ",
-  "correct_answer": 0.7
+  "correct_answer": 0.7,
+  "input_form": "답변 형식169"
  },
  {
   "index": 170,
   "semester": 3,
   "type": "연립일차부등식 ",
   "question": "장미 한 송이가 우리 동네에서는 1500원이다. 도매시장에서는 1200원인데, 차비가 2000원일 때 몇 송이 이상을 사면 도매시장에서 사는 것이  유리한가? ",
-  "correct_answer": 7
+  "correct_answer": 7,
+  "input_form": "답변 형식170"
  },
  {
   "index": 171,
   "semester": 4,
   "type": "경우의 수",
   "question": "후보 6명 중에서 회장, 부회장, 총무를 각각 1명씩 뽑는 방법은 몇 가지인가? ",
-  "correct_answer": 120
+  "correct_answer": 120,
+  "input_form": "답변 형식171"
  },
  {
   "index": 172,
   "semester": 4,
   "type": "경우의 수",
   "question": " 네 개의 숫자 0,1,2,3중에서 숫 자 두개를 동시에 뽑아서 만들 수 있는 두 자리 자연수는 모두 몇 개인가? ",
-  "correct_answer": 9
+  "correct_answer": 9,
+  "input_form": "답변 형식172"
  },
  {
   "index": 173,
   "semester": 4,
   "type": "확률",
   "question": "어떤 사건이 반드시 일어난다면 그 확률은 (     ) 이다. ",
-  "correct_answer": 1
+  "correct_answer": 1,
+  "input_form": "답변 형식173"
  },
  {
   "index": 174,
   "semester": 4,
   "type": "이등변삼각형",
   "question": "직각삼각형의 합동조건에는 RHS, RHA가 있는데 이 중 R은 직각을 뜻하고 H는 (        )을 뜻한다. ",
-  "correct_answer": "빗변"
+  "correct_answer": "빗변",
+  "input_form": "답변 형식174"
  },
  {
   "index": 175,
   "semester": 4,
   "type": "이등변삼각형",
   "question": "두 변의 길이가 같으면 밑각의 크기가 같고, 밑각의 크기가 같으면 (               ) 도 같다. ",
-  "correct_answer": "두 변의 길이"
+  "correct_answer": "두 변의 길이",
+  "input_form": "답변 형식175"
  },
  {
   "index": 176,
   "semester": 4,
   "type": "삼각형의 외심",
   "question": "둔각삼각형의 외심은 삼각형의 (내부,외부)에 있다. 택1 ",
-  "correct_answer": "외부 "
+  "correct_answer": "외부 ",
+  "input_form": "답변 형식176"
  },
  {
   "index": 177,
   "semester": 4,
   "type": "삼각형의 외심",
   "question": "외심은 삼각형의 각 (변,꼭짓점)에 이르는 거리가 같다. 택1",
-  "correct_answer": "꼭짓점"
+  "correct_answer": "꼭짓점",
+  "input_form": "답변 형식177"
  },
  {
   "index": 178,
   "semester": 4,
   "type": "삼각형의 내심 ",
   "question": "내심은 삼각형의 (외접원, 내접원)의 중심이다. 택1 ",
-  "correct_answer": "내접원"
+  "correct_answer": "내접원",
+  "input_form": "답변 형식178"
  },
  {
   "index": 179,
   "semester": 4,
   "type": "삼각형의 내심 ",
   "question": "내접원의 반지름을 r이라고 할 때, 삼각형의 각 변을 a,b,c라고 하면 삼각형의 넓이는 \\frac{1}{2}r(            ) 가 된다. ",
-  "correct_answer": "a+b+c"
+  "correct_answer": "a+b+c",
+  "input_form": "답변 형식179"
  },
  {
   "index": 180,
   "semester": 4,
   "type": "평행사변형",
   "question": "평행사변형의 각 변의 중점을 이어서 만든 사각형은 (            ) 이다. ",
-  "correct_answer": "평행사변형 "
+  "correct_answer": "평행사변형 ",
+  "input_form": "답변 형식180"
  },
  {
   "index": 181,
   "semester": 4,
   "type": "평행사변형",
   "question": "사각형 중에서 한 쌍의 대변이 평행한 사각형은 (               ) 이다. ",
-  "correct_answer": "사다리꼴 "
+  "correct_answer": "사다리꼴 ",
+  "input_form": "답변 형식181"
  },
  {
   "index": 182,
   "semester": 4,
   "type": "여러가지 사각형 ",
   "question": "사다리꼴, 평행사변형, 직사각형, 마름모 중에서 항상 두 대각선의 길이가 같은 것은 (             )이다. ",
-  "correct_answer": "직사각형 "
+  "correct_answer": "직사각형 ",
+  "input_form": "답변 형식182"
  },
  {
   "index": 183,
   "semester": 4,
   "type": "여러가지 사각형 ",
   "question": "평행사변형인데 한 각이 90도라면 그 사각형은 (              ) 이 된다. ",
-  "correct_answer": "직사각형 "
+  "correct_answer": "직사각형 ",
+  "input_form": "답변 형식183"
  },
  {
   "index": 184,
   "semester": 6,
   "type": "대푯값과 산포도 ",
   "question": "분산이나 표준편차처럼 자료가 흩어져 있는 정도를 보기 위한 것을 (        ) 라고 한다. ",
-  "correct_answer": "산포도 "
+  "correct_answer": "산포도 ",
+  "input_form": "답변 형식184"
  },
  {
   "index": 185,
   "semester": 6,
   "type": "대푯값과 산포도 ",
   "question": "편차의 합은 항상 얼마인가? ",
-  "correct_answer": 0
+  "correct_answer": 0,
+  "input_form": "답변 형식185"
  },
  {
   "index": 186,
   "semester": 6,
   "type": "원과 직선 ",
   "question": "길이가 같은 호에 대한 (        ) 의 크기는 서로 같다. ",
-  "correct_answer": "원주각"
+  "correct_answer": "원주각",
+  "input_form": "답변 형식186"
  },
  {
   "index": 187,
   "semester": 6,
   "type": "원과 직선 ",
   "question": "원에 내접하는 사각형의 한 쌍의 대각의 크기의 합은 몇 도인가? ",
-  "correct_answer": 180
+  "correct_answer": 180,
+  "input_form": "답변 형식187"
  },
  {
   "index": 188,
   "semester": 6,
   "type": "원주각 ",
   "question": "한 호에서 중심각이 80도이면 원주각의 크기는? ",
-  "correct_answer": "40도"
+  "correct_answer": "40도",
+  "input_form": "답변 형식188"
  },
  {
   "index": 189,
   "semester": 6,
   "type": "원주각 ",
   "question": "원과 만나는 점의 갯수가 1개인 직선을 접선, 2개인 직선을 (        ) 이라고 한다. ",
-  "correct_answer": "할선 "
+  "correct_answer": "할선 ",
+  "input_form": "답변 형식189"
  }
 ],
 "select_one":[
@@ -2458,7 +2647,9 @@
   "question": "(-2) - (-7) = ",
   "correct_answer": 5,
   "wrong_answer1": -9,
-  "wrong_answer2": -5
+  "wrong_answer2": -5,
+  "wrong_answer3": 0,
+  "wrong_answer4": 0
  },
  {
   "index": 17,
@@ -2467,7 +2658,9 @@
   "question": "(-3) x (7) =",
   "correct_answer": "-21",
   "wrong_answer1": 10,
-  "wrong_answer2": 21
+  "wrong_answer2": 21,
+  "wrong_answer3": 0,
+  "wrong_answer4": 0
  },
  {
   "index": 18,
@@ -2542,7 +2735,9 @@
   "question": "다음 중 이차방정식 x^2 - 5x + 6 = 0의 두 근은? ",
   "correct_answer": "2,3",
   "wrong_answer1": "1,6",
-  "wrong_answer2": "2,4"
+  "wrong_answer2": "2,4",
+  "wrong_answer3": 0,
+  "wrong_answer4": 0
  },
  {
   "index": 25,

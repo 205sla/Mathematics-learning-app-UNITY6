@@ -121,10 +121,10 @@ public class GameManager : MonoBehaviour
 
     public string Normalization(string input)
     {
-        // ¼ıÀÚ, ÇÑ±Û, ¾ËÆÄºªÀ» Á¦¿ÜÇÑ ¸ğµç ¹®ÀÚ¸¦ Á¦°ÅÇÏ´Â Á¤±Ô½Ä
-        string pattern = @"[^°¡-ÆRa-zA-Z0-9]";  // ÇÑ±Û, ¾ËÆÄºª, ¼ıÀÚ ¿ÜÀÇ ¹®ÀÚ
+        // ¼ıÀÚ, ÇÑ±Û, ¾ËÆÄºª°ú - ±âÈ£¸¦ Á¦¿ÜÇÑ ¸ğµç ¹®ÀÚ¸¦ Á¦°ÅÇÏ´Â Á¤±Ô½Ä
+        string pattern = @"[^°¡-ÆRa-zA-Z0-9\-]";  // ÇÑ±Û, ¾ËÆÄºª, ¼ıÀÚ, - ¿ÜÀÇ ¹®ÀÚ
         string result = Regex.Replace(input, pattern, "");
-        return result.ToLower();
+        return Regex.Replace(result.ToLower(), @"\u200B", "");
     }
 
 

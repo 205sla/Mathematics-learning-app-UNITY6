@@ -27,10 +27,11 @@ public class ReadQuestionManager : MonoBehaviour
         public string type;
         public string question;
         public string correct_answer;
+        public string input_form;
 
         public List<string> GetProblem()
         {
-            return new List<string> { index, semester, type, question, correct_answer };
+            return new List<string> { index, semester, type, question, correct_answer, input_form };
         }
     }
     [Serializable]
