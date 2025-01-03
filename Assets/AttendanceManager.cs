@@ -151,9 +151,10 @@ public class AttendanceManager : MonoBehaviour
             {
                 Debug.Log("이미 오늘 출석했습니다.");
                 todayCount += 1;
-                ES3.Save(todayCountKey, todayCount);
+                
 
             }
+            ES3.Save(todayCountKey, todayCount);
         }
 
         // 현재 날짜를 저장하여, 다음 출석 시 비교할 수 있게 합니다.
