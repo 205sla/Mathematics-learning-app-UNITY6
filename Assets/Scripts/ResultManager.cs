@@ -43,7 +43,6 @@ public class ResultManager : MonoBehaviour
         ResultShow();
         StartCoroutine(BtnShow());
     }
-
     void ResultShow()
     {// Sequence »ý¼º
         Sequence sequence = DOTween.Sequence();

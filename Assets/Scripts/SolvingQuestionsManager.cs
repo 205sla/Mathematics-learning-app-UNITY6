@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Text.RegularExpressions;
 using Debug = UnityEngine.Debug;
+using System;
 
 public class SolvingQuestionsManager : MonoBehaviour
 {
@@ -48,7 +49,7 @@ public class SolvingQuestionsManager : MonoBehaviour
 
     IEnumerator CourseProgress()
     {
-        questionNum = 0;
+        questionNum = -1;
         while (true)
         {
             questionNum += 1;
@@ -88,23 +89,29 @@ public class SolvingQuestionsManager : MonoBehaviour
 
 
             //마지막 문제 였나요?
-            if (questionNum + 1 == Questions.Count)
+            if (questionNum +1 == Questions.Count)
             {
                 if (missedQuestions.Count != 0)
                 {
+                    foreach (var q in missedQuestions)
+                    {
+                        Questions.Add(q);
+                    }
+
                     if (firstWrong)
                     {
                         SaveWrongProblem();
                     }
 
-                    foreach (var q in missedQuestions)
-                    {
-                        Questions.Add(q);
-                    }
+                    
                     missedQuestions.Clear();
                 }
                 else
                 {
+                    if (firstWrong)
+                    {
+                        SaveWrongProblem();
+                    }
                     EndProblemCourse();
                     yield return new WaitUntil(() => false);
                 }
@@ -148,6 +155,7 @@ public class SolvingQuestionsManager : MonoBehaviour
         ProblemCourseResults.Add("percentage", ((int)((float)(Questions.Count-incorrectQuestionCount) / (float)Questions.Count * 100f)).ToString());
         ProblemCourseResults.Add("maxCombo", maxCombo.ToString());
 
+        
 
         //GetRandomCombo(comboCount)
         ES3.Save("ProblemCourseResults", ProblemCourseResults);
@@ -157,17 +165,27 @@ public class SolvingQuestionsManager : MonoBehaviour
 
     void SaveWrongProblem()
     {//missedQuestions
-        List<List<string>> tempLis = new List<List<string>>();
+        firstWrong = false;
+        List<List<List<string>>> existingData = new List<List<List<string>>>();
+        missedQuestions.Insert(0, new List<string> { DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") });
+
         if (ES3.KeyExists("WrongProblemData"))
         {
-            tempLis = ES3.Load<List<List<string>>>("WrongProblemData");
+            // 기존 데이터 로드
+            existingData = ES3.Load<List<List<List<string>>>>("WrongProblemData");
+            Debug.Log("기존 데이터 로드 완료.");
         }
-        foreach (var l in missedQuestions)
-        {
-            tempLis.Add(l);
-        }
+        existingData.Add(missedQuestions);
 
-        ES3.Save("WrongProblemData", tempLis);
+        if (existingData.Count > 10)
+        {
+            existingData.RemoveAt(0);
+            Debug.Log("데이터가 10개를 초과하여 가장 오래된 데이터가 삭제되었습니다.");
+        }
+        
+
+
+        ES3.Save("WrongProblemData", existingData);
     }
 
     void SetCombo()
@@ -179,6 +197,9 @@ public class SolvingQuestionsManager : MonoBehaviour
 
     void SetQuestion()
     {
+        PrintList(Questions[questionNum]);
+
+
         Debug.Log("진짜 미리 정답 내가 알려준다." + Questions[questionNum][5]);
         switch (Questions[questionNum][0]) //  Questions[questionNum][0]
         {

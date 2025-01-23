@@ -40,8 +40,24 @@ public class MakingCourseManager : MonoBehaviour
             yield return StartCoroutine(LoadData());   // 데이터 로딩
             yield return StartCoroutine(SetPossibleQuestion());  // 가능한 문제 설정
 
+            int questionCount = 0;
             // 리스트에서 랜덤한 항목을 선택
-            SelectRandomLists(ref possibleQuestion, courseNum == -1 ? 5 : 20);
+            if ((int)courseType.x == 0)
+            {
+                if((int)courseType.y == 10)
+                {
+                    questionCount = 5;
+                }
+                else
+                {
+                    questionCount = 0;
+                }
+            }
+            else
+            {
+                questionCount = 20;
+            }
+            SelectRandomLists(ref possibleQuestion, questionCount);
 
             // 결과를 저장
             ES3.Save("courseData", possibleQuestion);
@@ -77,7 +93,14 @@ public class MakingCourseManager : MonoBehaviour
     // 랜덤 리스트 선택 함수
     void SelectRandomLists(ref List<List<string>> sourceLists, int numberOfSelections)
     {
-        List<int> availableIndexes = new List<int>();
+        if (numberOfSelections == 0)
+        {
+            return;
+        }
+
+
+
+            List<int> availableIndexes = new List<int>();
         for (int i = 0; i < sourceLists.Count; i++)
         {
             availableIndexes.Add(i);
@@ -92,12 +115,18 @@ public class MakingCourseManager : MonoBehaviour
             availableIndexes[j] = temp;
         }
 
-        // 랜덤으로 5개 인덱스를 선택하고, 나머지 리스트들은 삭제
+
         List<List<string>> selectedLists = new List<List<string>>();
-        for (int i = 0; i < numberOfSelections; i++)
-        {
-            selectedLists.Add(sourceLists[availableIndexes[i]]);
-        }
+        
+            // 랜덤으로 5개 인덱스를 선택하고, 나머지 리스트들은 삭제
+            for (int i = 0; i < numberOfSelections; i++)
+            {
+                selectedLists.Add(sourceLists[availableIndexes[i]]);
+            }
+        
+       
+
+      
 
         // 선택된 리스트를 원본 리스트에 덮어씀
         sourceLists.Clear();
@@ -109,54 +138,145 @@ public class MakingCourseManager : MonoBehaviour
     {
         possibleQuestion.Clear();
 
-        // OX
-        foreach (List<string> P in ListOXdata)
+        if ((int)courseType.x == 0 && (int)courseType.y != 10)
         {
-            if (CheckProblemCorrect(P))
+            List<List<List<string>>> Datas = new List<List<List<string>>>();
+
+            if (ES3.KeyExists("WrongProblemData"))
             {
-                List<string> tempList = new List<string>();
-                tempList.Add("OX");
-                tempList.AddRange(P);
-                possibleQuestion.Add(tempList);
+                // 기존 데이터 로드
+                Datas = ES3.Load<List<List<List<string>>>>("WrongProblemData");
+                Debug.Log("기존 데이터 로드 완료.");
+            }
+            List<List<string>> reviewWrongAnswers = new List<List<string>>();
+            reviewWrongAnswers = Datas[(int)courseType.y];
+
+            foreach (List<string> P in reviewWrongAnswers)
+            {
+
+                if (P.Count == 1)
+                {
+                    continue;
+                }
+                possibleQuestion.Add(P);
+                if (P[0] == "OX")
+                {
+                    List<string> tempList = new List<string>();
+                    tempList.Add("OX");
+                    if (int.Parse(P[1]) % 2 == 0)
+                    {
+                        tempList.AddRange(ListOXdata[int.Parse(P[1])-2]);
+                    }
+                    else
+                    {
+                        tempList.AddRange(ListOXdata[int.Parse(P[1])]);
+                    }
+                    possibleQuestion.Add(tempList);
+                }
+
+                if (P[0] == "SA")
+                {
+                    List<string> tempList = new List<string>();
+                    tempList.Add("SA");
+                    if (int.Parse(P[1]) % 2 == 0)
+                    {
+                        tempList.AddRange(ListSAdata[int.Parse(P[1]) - 2]);
+                    }
+                    else
+                    {
+                        tempList.AddRange(ListSAdata[int.Parse(P[1])]);
+                    }
+                    possibleQuestion.Add(tempList);
+                }
+
+                if (P[0] == "SO")
+                {
+                    List<string> tempList = new List<string>();
+                    tempList.Add("SO");
+                    if (int.Parse(P[1]) % 2 == 0)
+                    {
+                        tempList.AddRange(ListSOdata[int.Parse(P[1]) - 2]);
+                    }
+                    else
+                    {
+                        tempList.AddRange(ListSOdata[int.Parse(P[1])]);
+                    }
+                    possibleQuestion.Add(tempList);
+                }
+
+                if (P[0] == "SM")
+                {
+                    List<string> tempList = new List<string>();
+                    tempList.Add("SM");
+                    if (int.Parse(P[1]) % 2 == 0)
+                    {
+                        tempList.AddRange(ListSMdata[int.Parse(P[1]) - 2]);
+                    }
+                    else
+                    {
+                        tempList.AddRange(ListSMdata[int.Parse(P[1])]);
+                    }
+                    possibleQuestion.Add(tempList);
+                }
+            }
+
+
+
+        }
+        else
+        {
+
+
+
+
+            // OX
+            foreach (List<string> P in ListOXdata)
+            {
+                if (CheckProblemCorrect(P))
+                {
+                    List<string> tempList = new List<string>();
+                    tempList.Add("OX");
+                    tempList.AddRange(P);
+                    possibleQuestion.Add(tempList);
+                }
+            }
+
+            // SA
+            foreach (List<string> P in ListSAdata)
+            {
+                if (CheckProblemCorrect(P))
+                {
+                    List<string> tempList = new List<string>();
+                    tempList.Add("SA");
+                    tempList.AddRange(P);
+                    possibleQuestion.Add(tempList);
+                }
+            }
+
+            // SO
+            foreach (List<string> P in ListSOdata)
+            {
+                if (CheckProblemCorrect(P))
+                {
+                    List<string> tempList = new List<string>();
+                    tempList.Add("SO");
+                    tempList.AddRange(P);
+                    possibleQuestion.Add(tempList);
+                }
+            }
+
+            // SM
+            foreach (List<string> P in ListSMdata)
+            {
+                if (CheckProblemCorrect(P))
+                {
+                    List<string> tempList = new List<string>();
+                    tempList.Add("SM");
+                    tempList.AddRange(P);
+                    possibleQuestion.Add(tempList);
+                }
             }
         }
-
-        // SA
-        foreach (List<string> P in ListSAdata)
-        {
-            if (CheckProblemCorrect(P))
-            {
-                List<string> tempList = new List<string>();
-                tempList.Add("SA");
-                tempList.AddRange(P);
-                possibleQuestion.Add(tempList);
-            }
-        }
-
-        // SO
-        foreach (List<string> P in ListSOdata)
-        {
-            if (CheckProblemCorrect(P))
-            {
-                List<string> tempList = new List<string>();
-                tempList.Add("SO");
-                tempList.AddRange(P);
-                possibleQuestion.Add(tempList);
-            }
-        }
-
-        // SM
-        foreach (List<string> P in ListSMdata)
-        {
-            if (CheckProblemCorrect(P))
-            {
-                List<string> tempList = new List<string>();
-                tempList.Add("SM");
-                tempList.AddRange(P);
-                possibleQuestion.Add(tempList);
-            }
-        }
-
         yield return null;  // 잠시 대기하여, 다음 작업이 바로 실행되도록 합니다.
     }
 
@@ -167,7 +287,7 @@ public class MakingCourseManager : MonoBehaviour
         {
             return false;
         }
-        if (courseNum == -1)
+        if (courseNum == 8)
         {
             return GameManager.instance.Normalization(p[2]) == courseName;
         }
@@ -253,17 +373,31 @@ public class MakingCourseManager : MonoBehaviour
     Vector2 CheckCourseType(string input)
     {
         string pattern = @"^(\d+)학년(\d+)학기$";
+        string pattern2 = @"^오답복습(\d+)$";
         Match match = Regex.Match(input, pattern);
 
         if (match.Success)
         {
+            
             string a = match.Groups[1].Value;  // 첫 번째 그룹은 a (학년 앞 숫자)
             string b = match.Groups[2].Value;  // 두 번째 그룹은 b (학기 앞 숫자)
+            Debug.Log("코스는 "+ a +"학년"+b+"학기");
             return new Vector2(a[0] - '0', b[0] - '0');
         }
         else
         {
-            return new Vector2(0, 1);
+            Match match2 = Regex.Match(input, pattern2);
+            if (match2.Success)
+            {
+                Debug.Log("코스는 복습"+ match2.Groups[1].Value[0]);
+
+                return new Vector2(0, match2.Groups[1].Value[0]-'0');
+            }
+            else
+            {
+                Debug.Log("코스는 단원별이야");
+                return new Vector2(0, 10);
+            }
         }
     }
 }

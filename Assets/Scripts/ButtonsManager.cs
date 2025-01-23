@@ -3,15 +3,16 @@ using UnityEngine;
 public class ButtonsManager : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    [SerializeField]
+    RectTransform Content;
 
-    // Update is called once per frame
-    void Update()
+    float lastLearnedSemester = 0;
+    void Awake()
     {
-        
+        //마지막으로 학습한 학기 불러오기
+        lastLearnedSemester = ES3.Load("lastLearnedSemester", 0f);
+        Content.anchoredPosition = new Vector2(lastLearnedSemester, 1700);
+
     }
 
     public void SetCourse(string course)
@@ -22,8 +23,9 @@ public class ButtonsManager : MonoBehaviour
             GameManager.instance.LoadScene();
             return;
         }
-
+        ES3.Save("lastLearnedSemester", Content.position.x);
         ES3.Save("course", course);
         GameManager.instance.LoadScene("MakingCourse");
     }
+
 }
