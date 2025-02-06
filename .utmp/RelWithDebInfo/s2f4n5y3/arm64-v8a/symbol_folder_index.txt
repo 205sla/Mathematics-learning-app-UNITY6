@@ -1,0 +1,1 @@
+C:\Users\hbk\prg\math6\Mathematics-learning-app-UNITY6\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\cxx\RelWithDebInfo\s2f4n5y3\obj\arm64-v8a
