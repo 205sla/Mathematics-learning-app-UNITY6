@@ -31,9 +31,9 @@ public class RecordProblemManager : MonoBehaviour
     // Update is called once per frame
     public void Btn(int num)
     {
-           
-            ES3.Save("course", "오답복습"+num.ToString());
-            GameManager.instance.LoadScene("MakingCourse");
+        ES3.Save("courseNum", num);
+        ES3.Save("course", "오답복습"+num.ToString());
+        GameManager.instance.LoadScene("LearningAnalytics");
         
     }
 }

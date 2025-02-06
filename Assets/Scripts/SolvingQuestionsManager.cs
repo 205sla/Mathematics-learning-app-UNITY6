@@ -167,7 +167,7 @@ public class SolvingQuestionsManager : MonoBehaviour
     {//missedQuestions
         firstWrong = false;
         List<List<List<string>>> existingData = new List<List<List<string>>>();
-        missedQuestions.Insert(0, new List<string> { DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") });
+        missedQuestions.Insert(0, new List<string> { DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"), ES3.Load<string>("course") });
 
         if (ES3.KeyExists("WrongProblemData"))
         {

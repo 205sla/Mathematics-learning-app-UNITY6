@@ -21,6 +21,9 @@ EditorBuildSettings:
     path: Assets/Scenes/RecordProblem.unity
     guid: 8fcb1d9a7a83bba46a7fd5224b038f28
   - enabled: 1
+    path: Assets/Scenes/LearningAnalytics.unity
+    guid: 97e7b35fa8c946f4eb90a331201e09d3
+  - enabled: 1
     path: Assets/Scenes/Setting.unity
     guid: f97bcb1b5b8f841449eca10011f63217
   - enabled: 1

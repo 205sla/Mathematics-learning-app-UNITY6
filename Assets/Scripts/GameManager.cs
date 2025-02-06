@@ -51,6 +51,11 @@ public class GameManager : MonoBehaviour
             LoadScene("Title");
             return;
         }
+        if (SceneManager.GetActiveScene().name == "LearningAnalytics")
+        {
+            LoadScene("RecordProblem");
+            return;
+        }
         if (SceneManager.GetActiveScene().name == "Setting")
         {
             LoadScene("Title");
@@ -63,7 +68,7 @@ public class GameManager : MonoBehaviour
         }
         if (SceneManager.GetActiveScene().name == "MakingCourse")
         {
-            LoadScene("SelectProblem");
+            LoadScene("Title");
             return;
         }
 
@@ -85,7 +90,7 @@ public class GameManager : MonoBehaviour
         {
             if (SceneManager.GetActiveScene().name == "SolvingQuestions")
             {
-                LoadScene("SelectProblem");
+                LoadScene("Title");
                 return;
             }
             else

@@ -114,10 +114,13 @@ public class AttendanceManager : MonoBehaviour
         }
 
         // 첫 번째 출석이라면 연속 출석일을 1로 설정
+
         if (lastAttendanceDate == "")
         {
             consecutiveDays = 1;
+            todayCount = 1;  // 첫 출석일이므로 오늘 출석 횟수를 1로 초기화
             Debug.Log("첫 출석입니다.");
+            ES3.Save(todayCountKey, todayCount);  // 오늘 출석 횟수를 저장
         }
         else
         {
