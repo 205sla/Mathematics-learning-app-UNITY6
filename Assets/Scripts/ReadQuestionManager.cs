@@ -2,9 +2,14 @@ using System; /* for Serializable */
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
+
 
 public class ReadQuestionManager : MonoBehaviour
 {
+    [SerializeField]
+    TMP_Text Version;
+
     [Serializable]
     public class ProblemOX
     {
@@ -94,6 +99,22 @@ public class ReadQuestionManager : MonoBehaviour
         else
         {
             Debug.Log("문제 이미 있어요.");
+            if (ES3.KeyExists("Version"))
+            {
+
+                if(ES3.Load<string>("Version")!= Version.text)
+                {
+                    Debug.Log("버전 안 맞아서 없어서 불러와라");
+                    ReadQuestion();
+                    Debug.Log("문제 다 불러옴");
+                }
+            }
+            else
+            {
+                Debug.Log("버전 정보 없어서 불러와라");
+                ReadQuestion();
+                Debug.Log("문제 다 불러옴");
+            }
         }
 
 
@@ -195,5 +216,8 @@ public class ReadQuestionManager : MonoBehaviour
         }
         ListSM.Add(new List<string> { "end" });
         ES3.Save<List<List<string>>>("ListSMdata", ListSM);
+
+
+        ES3.Save("Version", Version.text);
     }
 }

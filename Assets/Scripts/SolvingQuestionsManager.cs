@@ -455,6 +455,10 @@ public class SolvingQuestionsManager : MonoBehaviour
     // 정답과 답변을 비교하는 함수
     bool IsAnswerCorrect(string answer, string correctAnswer) 
     {
+        if(answer== correctAnswer)
+        {
+            return true;
+        }
         // 1. 답변과 정답에서 한글, 알파벳, 숫자, -만 남기기
         string processedAnswer = CleanString(answer);
         string processedCorrectAnswer = CleanString(correctAnswer);
