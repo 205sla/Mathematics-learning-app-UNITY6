@@ -6,17 +6,23 @@ public class ButtonsManager : MonoBehaviour
     [SerializeField]
     RectTransform Content;
 
-    float lastLearnedSemester = 0;
+    float lastLearnedSemester = 0, startTime=0;
     void Awake()
     {
         //마지막으로 학습한 학기 불러오기
         lastLearnedSemester = ES3.Load("lastLearnedSemester", 0f);
         Content.anchoredPosition = new Vector2(lastLearnedSemester, 1700);
+        startTime = Time.time;
 
     }
 
     public void SetCourse(string course)
     {
+        if(Time.time- startTime < 0.5f)
+        {
+            return;
+        }
+
         if (string.IsNullOrEmpty(course))
         {
             //에러

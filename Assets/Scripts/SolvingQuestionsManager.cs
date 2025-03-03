@@ -283,7 +283,7 @@ public class SolvingQuestionsManager : MonoBehaviour
                 correctAnswer = GameManager.instance.Normalization(Questions[questionNum][5]);
                 Debug.Log("정답 스포는: " + correctAnswer);
                 Debug.Log("입력된 스포는: " + answer);
-                testTXT.text = "정답은:'" + correctAnswer + "'(" + correctAnswer.Count() + ")'\n입력된 문자는:" + answer + "'(" + answer.Count() + ")'";
+                testTXT.text = "정답은:'" + correctAnswer + "'(" + correctAnswer.Count() + ")'\n입력된 문자는:" + answer + "'(" + answer.Count() + ")'\n단순 비교:"+ (correctAnswer== answer)+"\n보정 비교:"+ IsAnswerCorrect(correctAnswer, answer);
                 if (IsAnswerCorrect(correctAnswer, answer))
                 {
                     showTxt = "정답입니다!";

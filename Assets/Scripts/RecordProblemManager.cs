@@ -4,11 +4,16 @@ using UnityEngine;
 
 public class RecordProblemManager : MonoBehaviour
 {
+
+
     [SerializeField]
     GameObject[] button;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
+
+    float startTime = 0;
     void Start()
     {
+        startTime = Time.time;
         List<List<List<string>>> Datas = new List<List<List<string>>>();
 
         if (ES3.KeyExists("WrongProblemData"))
@@ -31,6 +36,10 @@ public class RecordProblemManager : MonoBehaviour
     // Update is called once per frame
     public void Btn(int num)
     {
+        if (Time.time - startTime < 0.5f)
+        {
+            return;
+        }
         ES3.Save("courseNum", num);
         ES3.Save("course", "오답복습"+num.ToString());
         GameManager.instance.LoadScene("LearningAnalytics");
