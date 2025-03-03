@@ -4,6 +4,8 @@ using UnityEngine;
 using System.Text.RegularExpressions;
 using Debug = UnityEngine.Debug;
 using System;
+using TMPro;
+using System.Linq;
 
 public class SolvingQuestionsManager : MonoBehaviour
 {
@@ -20,6 +22,9 @@ public class SolvingQuestionsManager : MonoBehaviour
 
     [SerializeField]
     ComplimentGenerator ComplimentGenerator;
+
+    [SerializeField]
+    TMP_Text testTXT;
 
 
     string showTxt = "";
@@ -278,6 +283,7 @@ public class SolvingQuestionsManager : MonoBehaviour
                 correctAnswer = GameManager.instance.Normalization(Questions[questionNum][5]);
                 Debug.Log("정답 스포는: " + correctAnswer);
                 Debug.Log("입력된 스포는: " + answer);
+                testTXT.text = "정답은:'" + correctAnswer + "'(" + correctAnswer.Count() + ")'\n입력된 문자는:" + answer + "'(" + answer.Count() + ")'";
                 if (IsAnswerCorrect(correctAnswer, answer))
                 {
                     showTxt = "정답입니다!";
